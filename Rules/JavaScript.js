@@ -18,7 +18,7 @@ module.exports = {
     "guard-for-in":                   OFF,
     "id-length":                      [ERROR, { max: 30 }],
     "key-spacing":                    [ERROR, { align: "value" }],
-    "max-len":                        [ERROR, { ignoreRegExpLiterals: true, ignoreStrings: true, ignoreTemplateLiterals: true, ignoreUrls: true }],
+    "max-len":                        [ERROR, { code: 100, ignoreRegExpLiterals: true, ignoreStrings: true, ignoreTemplateLiterals: true, ignoreUrls: true }],
     "max-lines":                      [ERROR, { skipBlankLines: true, skipComments: true }],
     "max-lines-per-function":         [ERROR, { skipBlankLines: true, skipComments: true }],
     "max-params":                     [ERROR, 5],
