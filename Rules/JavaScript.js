@@ -3,7 +3,6 @@ const { ERROR, WARN, OFF, AS_NEEDED, CONSISTENT, CONSISTENT_AS_NEEDED, ALWAYS, N
 module.exports = {
     "accessor-pairs":                 OFF,
     "array-bracket-newline":          [ERROR, { multiline: true }],
-    "array-callback-return":          [ERROR, { checkForEach: true }],
     "array-element-newline":          [ERROR, CONSISTENT],
     "arrow-body-style":               [ERROR, AS_NEEDED],
     "complexity":                     OFF,
