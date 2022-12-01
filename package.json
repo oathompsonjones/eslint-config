@@ -1,5 +1,5 @@
 {
-    "name": "eslint-rules",
+    "name": "@oathompsonjones/eslintrc",
     "version": "1.0.0",
     "description": "Provides ESLint rules for various different situations.",
     "main": "index.js",
