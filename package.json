@@ -1,0 +1,10 @@
+{
+    "name": "eslint-rules",
+    "version": "1.0.0",
+    "description": "Provides ESLint rules for various different situations.",
+    "main": "index.js",
+    "type": "commonjs",
+    "dependencies": {
+        "eslint": "^8.28.0"
+    }
+}
