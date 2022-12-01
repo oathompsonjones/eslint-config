@@ -44,7 +44,7 @@ module.exports = {
     "one-var":                          OFF,
     "padded-blocks":                    [ERROR, NEVER],
     // TODO padding-line-between-statements
-    "prefer-name-capture-group":        OFF,
+    "prefer-named-capture-group":       OFF,
     "quote-props":                      [ERROR, CONSISTENT_AS_NEEDED],
     "space-before-function-paren":      [ERROR, { anonymous: ALWAYS, asyncArrow: ALWAYS, named: NEVER }],
     "wrap-iife":                        [ERROR, "inside"],
