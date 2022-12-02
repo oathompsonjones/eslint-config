@@ -16,6 +16,7 @@ module.exports = {
     "generator-star-spacing":           [ERROR, { after: false, before: true }],
     "guard-for-in":                     OFF,
     "id-length":                        [ERROR, { max: 30, min: 1 }],
+    "indent":                           [ERROR, { SwitchCase: 1 }],
     "key-spacing":                      [ERROR, { align: "value" }],
     "max-len":                          [ERROR, { code: 100, ignoreRegExpLiterals: true, ignoreStrings: true, ignoreTemplateLiterals: true, ignoreUrls: true }],
     "max-lines":                        [ERROR, { max: 500, skipBlankLines: true, skipComments: true }],
