@@ -1,4 +1,4 @@
-# @oathompsonjones/eslintrc
+# @oathompsonjones/eslint-config
 
 This package provides ESLint configurations for various types of JavaScript or TypeScript projects.
 
@@ -6,7 +6,7 @@ This package provides ESLint configurations for various types of JavaScript or T
 - JavaScript
     - [x] Node
     - [ ] React
-    - [ ] Browser
+    - [x] Browser
 - TypeScript
     - [ ] Node
     - [ ] React
@@ -14,42 +14,63 @@ This package provides ESLint configurations for various types of JavaScript or T
 
 ### How to use a configuration
 - Step 1: Install this package
-Run `npm install @oathompsonjones/eslintrc` to add this package to your project. You do **not** need to install eslint separately.
+    Run `npm install @oathompsonjones/eslint-config` to add this package to your project. You do **not** need to install eslint separately.
 
 - Step 2: Create your .eslintrc file
-Create a file in the root of your project called `.eslintrc.js`.
-This file will import a config file from the package, then export it.
-The file path to require will be of the form `@oathompsonjones/eslintrc/{Language}/{Type}`.
-Paste the following code, depending on what kind of project you are making:
+    Create a file in the root of your project called `.eslintrc`.
+    Paste the following code, depending on what kind of project you are making:
     - JavaScript
         - Node - The default export is for a JavaScript Node project.
-            ```js
-            module.exports = require("@oathompsonjones/eslintrc");
+            ```json
+            {
+                "extends": "@oathompsonjones/eslint-config"
+            }
             ```
             You can also do use
-            ```js
-            module.exports = require("@oathompsonjones/eslintrc/JavaScript/Node");
+            ```json
+            {
+                "extends": "@oathompsonjones/eslint-config/JavaScript/Node"
+            }
             ```
         - Browser
-            ```js
-            module.exports = require("@oathompsonjones/eslintrc/JavaScript/Browser");
+            ```json
+            {
+                "extends": "@oathompsonjones/eslint-config/JavaScript/Browser"
+            }
             ```
         - React
-            ```js
-            module.exports = require("@oathompsonjones/eslintrc/JavaScript/React");
+            ```json
+            {
+                "extends": "@oathompsonjones/eslint-config/JavaScript/React"
+            }
             ```
     - TypeScript
         - Node
-            ```js
-            module.exports = require("@oathompsonjones/eslintrc/TypeScript/Node");
+            ```json
+            {
+                "extends": "@oathompsonjones/eslint-config/TypeScript/Node",
+                "parserOptions": {
+                    "project": "./tsconfig"
+                }
+            }
             ```
         - Browser
-            ```js
-            module.exports = require("@oathompsonjones/eslintrc/TypeScript/Browser");
+            ```json
+            {
+                "extends": "@oathompsonjones/eslint-config/TypeScript/Browser",
+                "parserOptions": {
+                    "project": "./tsconfig"
+                }
+            }
             ```
         - React
-            ```js
-            module.exports = require("@oathompsonjones/eslintrc/TypeScript/React");
+            ```json
+            {
+                "extends": "@oathompsonjones/eslint-config/TypeScript/React",
+                "parserOptions": {
+                    "project": "./tsconfig"
+                }
+            }
             ```
 
 - Step 3: You're done!
