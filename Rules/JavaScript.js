@@ -14,7 +14,7 @@ module.exports = {
     "func-style":                       [ERROR, "declaration", { allowArrowFunctions: true }],
     "function-call-argument-newline":   [ERROR, CONSISTENT],
     "function-paren-newline":           [ERROR, CONSISTENT],
-    "generator-star-spacing":           [ERROR, { after: false, before: true }],
+    "generator-star-spacing":           [ERROR, "start"],
     "guard-for-in":                     OFF,
     "id-length":                        [ERROR, { max: 30, min: 1 }],
     "indent":                           [ERROR, 4, { SwitchCase: 1 }],
@@ -52,5 +52,5 @@ module.exports = {
     "quote-props":                      [ERROR, CONSISTENT_AS_NEEDED],
     "space-before-function-paren":      [ERROR, { anonymous: ALWAYS, asyncArrow: ALWAYS, named: NEVER }],
     "wrap-iife":                        [ERROR, "inside"],
-    "yield-star-spacing":               [ERROR, { after: false, before: true }]
+    "yield-star-spacing":               [ERROR, "after"]
 };
