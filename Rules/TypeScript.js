@@ -22,7 +22,7 @@ const extensionRules = {
     "func-call-spacing":           ERROR,
     "indent":                      [ERROR, 4, { SwitchCase: 1 }],
     "init-declarations":           ERROR,
-    "keyword-spacing":             [ERROR, { after: true, before: true, overrides: [] }],
+    "keyword-spacing":             [ERROR, { after: true, before: true, overrides: {} }],
     "lines-between-class-members": ERROR,
     "no-array-constructor":        ERROR,
     "no-dupe-class-members":       ERROR,
