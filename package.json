@@ -1,6 +1,6 @@
 {
     "name": "@oathompsonjones/eslint-config",
-    "version": "0.0.14",
+    "version": "0.0.15",
     "description": "Provides ESLint rules for various different situations.",
     "main": "index.js",
     "type": "commonjs",

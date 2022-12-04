@@ -52,6 +52,7 @@ module.exports = {
     "prefer-named-capture-group":       OFF,
     "quote-props":                      [ERROR, CONSISTENT_AS_NEEDED],
     "space-before-function-paren":      [ERROR, { anonymous: ALWAYS, asyncArrow: ALWAYS, named: NEVER }],
+    "spaced-comment":                   [ERROR, ALWAYS, { markers: ["/", "#", "!", "?", "*"] }],
     "wrap-iife":                        [ERROR, "inside"],
     "yield-star-spacing":               [ERROR, "after"]
 };
