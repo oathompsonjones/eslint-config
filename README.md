@@ -8,9 +8,9 @@ This package provides ESLint configurations for various types of JavaScript or T
     - [ ] React
     - [x] Browser
 - TypeScript
-    - [ ] Node
+    - [x] Node
     - [ ] React
-    - [ ] Browser
+    - [x] Browser
 
 ### How to use a configuration
 - Step 1: Install this package
