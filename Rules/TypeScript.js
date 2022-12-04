@@ -1,16 +1,17 @@
 const { ERROR, OFF, ALWAYS, NEVER } = require("./Constants");
 
 const supportedRules = {
-    "array-type":                   [ERROR, { default: "array-simple" }],
-    "member-delimiter-style":       [ERROR, { multiline: { delimiter: "semi", requireLast: true }, multilineDetection: "brackets", singleline: { delimiter: "semi", requireLast: true } }],
-    "no-confusing-void-expression": [ERROR, { ignoreArrowShorthand: true, ignoreVoidOperator: true }],
-    "no-inferable-types":           OFF,
-    "no-non-null-assertion":        OFF,
-    "no-require-imports":           OFF,
-    "no-this-alias":                [ERROR, { allowedNames: ["self", "that"] }],
-    "no-type-alias":                OFF,
-    "parameter-properties":         OFF,
-    "typedef":                      OFF
+    "array-type":                      [ERROR, { default: "array-simple" }],
+    "member-delimiter-style":          [ERROR, { multiline: { delimiter: "semi", requireLast: true }, multilineDetection: "brackets", singleline: { delimiter: "semi", requireLast: true } }],
+    "no-confusing-void-expression":    [ERROR, { ignoreArrowShorthand: true, ignoreVoidOperator: true }],
+    "no-inferable-types":              OFF,
+    "no-non-null-assertion":           OFF,
+    "no-require-imports":              OFF,
+    "no-this-alias":                   [ERROR, { allowedNames: ["self", "that"] }],
+    "no-type-alias":                   OFF,
+    "parameter-properties":            OFF,
+    "prefer-readonly-parameter-types": OFF,
+    "typedef":                         OFF
 };
 const formattedSupportedRules = Object.fromEntries(Object.entries(supportedRules).map(([key, value]) => [`@typescript-eslint/${key}`, value]));
 
