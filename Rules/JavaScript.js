@@ -33,7 +33,7 @@ const eslintRules = {
     "no-continue":                      OFF,
     "no-div-regex":                     OFF,
     "no-else-return":                   [ERROR, { allowElseIf: false }],
-    "no-extra-parens":                  [ERROR, "all", { returnAssign: false }],
+    "no-extra-parens":                  [ERROR, "all", { enforceForArrowConditionals: false, returnAssign: false }],
     "no-implicit-coercion":             [ERROR, { allow: ["!!"] }],
     "no-inner-declarations":            OFF,
     "no-labels":                        OFF,

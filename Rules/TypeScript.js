@@ -30,7 +30,7 @@ let extensionTypeScriptEslintRules = {
     "no-dupe-class-members":       ERROR,
     "no-duplicate-imports":        ERROR,
     "no-empty-function":           ERROR,
-    "no-extra-parens":             ERROR,
+    "no-extra-parens":             [ERROR, "all", { enforceForArrowConditionals: false, returnAssign: false }],
     "no-extra-semi":               ERROR,
     "no-implied-eval":             ERROR,
     "no-invalid-this":             ERROR,
