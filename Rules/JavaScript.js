@@ -18,6 +18,7 @@ module.exports = {
     "guard-for-in":                     OFF,
     "id-length":                        [ERROR, { max: 30, min: 1 }],
     "indent":                           [ERROR, 4, { SwitchCase: 1 }],
+    "init-declarations":                OFF,
     "key-spacing":                      [ERROR, { align: "value" }],
     "max-len":                          [ERROR, { code: 150, ignoreRegExpLiterals: true, ignoreStrings: true, ignoreTemplateLiterals: true, ignoreUrls: true }],
     "max-lines":                        [ERROR, { max: 750, skipBlankLines: true, skipComments: true }],

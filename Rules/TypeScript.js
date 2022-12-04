@@ -23,7 +23,7 @@ const extensionRules = {
     "dot-notation":                ERROR,
     "func-call-spacing":           ERROR,
     "indent":                      [ERROR, 4, { SwitchCase: 1 }],
-    "init-declarations":           ERROR,
+    "init-declarations":           OFF,
     "keyword-spacing":             [ERROR, { after: true, before: true, overrides: {} }],
     "lines-between-class-members": ERROR,
     "no-array-constructor":        ERROR,
