@@ -8,6 +8,7 @@ const supportedRules = {
     "no-non-null-assertion":        OFF,
     "no-require-imports":           OFF,
     "no-this-alias":                [ERROR, { allowedNames: ["self", "that"] }],
+    "no-type-alias":                OFF,
     "parameter-properties":         OFF,
     "typedef":                      OFF
 };
