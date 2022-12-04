@@ -6,6 +6,7 @@ module.exports = {
     "array-element-newline":            [ERROR, CONSISTENT],
     "arrow-body-style":                 [ERROR, AS_NEEDED],
     "complexity":                       OFF,
+    "consistent-return":                OFF,
     "curly":                            [ERROR, "multi-or-nest", CONSISTENT],
     "default-case":                     OFF,
     "dot-location":                     [ERROR, "property"],
