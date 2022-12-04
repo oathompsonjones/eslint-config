@@ -50,7 +50,7 @@ This package provides ESLint configurations for various types of JavaScript or T
             {
                 "extends": "@oathompsonjones/eslint-config/TypeScript/Node",
                 "parserOptions": {
-                    "project": "./tsconfig"
+                    "project": "./tsconfig.json"
                 }
             }
             ```
@@ -59,7 +59,7 @@ This package provides ESLint configurations for various types of JavaScript or T
             {
                 "extends": "@oathompsonjones/eslint-config/TypeScript/Browser",
                 "parserOptions": {
-                    "project": "./tsconfig"
+                    "project": "./tsconfig.json"
                 }
             }
             ```
@@ -68,7 +68,7 @@ This package provides ESLint configurations for various types of JavaScript or T
             {
                 "extends": "@oathompsonjones/eslint-config/TypeScript/React",
                 "parserOptions": {
-                    "project": "./tsconfig"
+                    "project": "./tsconfig.json"
                 }
             }
             ```
