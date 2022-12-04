@@ -1,6 +1,7 @@
 const jsRules = require("../Rules/JavaScript");
 const tsRules = require("../Rules/TypeScript");
 const reactRules = require("../Rules/React");
+const tsReactRules = require("../Rules/TypeScriptReact");
 
 module.exports = {
     env:            { browser: true, es6: true, node: true },
@@ -10,5 +11,5 @@ module.exports = {
     parserOptions:  { ecmaFeatures: { jsx: true }, ecmaVersion: "latest", sourceType: "module" },
     plugins:        ["@typescript-eslint"],
     root:           true,
-    rules:          { ...jsRules, ...tsRules, ...reactRules }
+    rules:          { ...jsRules, ...tsRules, ...reactRules, ...tsReactRules }
 };

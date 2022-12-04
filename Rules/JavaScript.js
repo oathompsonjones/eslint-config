@@ -1,6 +1,6 @@
 const { ERROR, WARN, OFF, AS_NEEDED, CONSISTENT, CONSISTENT_AS_NEEDED, ALWAYS, NEVER } = require("./Constants");
 
-module.exports = {
+const eslintRules = {
     "accessor-pairs":                   OFF,
     "array-bracket-newline":            [ERROR, { multiline: true }],
     "array-element-newline":            [ERROR, CONSISTENT],
@@ -58,3 +58,5 @@ module.exports = {
     "wrap-iife":                        [ERROR, "inside"],
     "yield-star-spacing":               [ERROR, "after"]
 };
+
+module.exports = eslintRules;

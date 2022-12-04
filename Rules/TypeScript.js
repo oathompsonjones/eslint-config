@@ -1,6 +1,6 @@
 const { ERROR, OFF, ALWAYS, NEVER } = require("./Constants");
 
-const supportedRules = {
+let supportedTypeScriptEslintRules = {
     "array-type":                      [ERROR, { default: "array-simple" }],
     "member-delimiter-style":          [ERROR, { multiline: { delimiter: "semi", requireLast: true }, multilineDetection: "brackets", singleline: { delimiter: "semi", requireLast: true } }],
     "no-confusing-void-expression":    OFF,
@@ -13,9 +13,9 @@ const supportedRules = {
     "prefer-readonly-parameter-types": OFF,
     "typedef":                         OFF
 };
-const formattedSupportedRules = Object.fromEntries(Object.entries(supportedRules).map(([key, value]) => [`@typescript-eslint/${key}`, value]));
+supportedTypeScriptEslintRules = Object.fromEntries(Object.entries(supportedTypeScriptEslintRules).map(([key, value]) => [`@typescript-eslint/${key}`, value]));
 
-const extensionRules = {
+let extensionTypeScriptEslintRules = {
     "brace-style":                 ERROR,
     "comma-dangle":                ERROR,
     "comma-spacing":               ERROR,
@@ -55,12 +55,9 @@ const extensionRules = {
     "space-before-function-paren": [ERROR, { anonymous: ALWAYS, asyncArrow: ALWAYS, named: NEVER }],
     "space-infix-ops":             ERROR
 };
-const formattedExtensionRules = Object.fromEntries([
-    ...Object.entries(extensionRules).map(([key]) => [key, OFF]),
-    ...Object.entries(extensionRules).map(([key, value]) => [`@typescript-eslint/${key}`, value])
-]);
+extensionTypeScriptEslintRules = Object.fromEntries([...Object.entries(extensionTypeScriptEslintRules).map(([key]) => [key, OFF]), ...Object.entries(extensionTypeScriptEslintRules).map(([key, value]) => [`@typescript-eslint/${key}`, value])]);
 
 module.exports = {
-    ...formattedSupportedRules,
-    ...formattedExtensionRules
+    ...supportedTypeScriptEslintRules,
+    ...extensionTypeScriptEslintRules
 };
