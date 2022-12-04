@@ -9,7 +9,7 @@ const supportedRules = {
     "no-require-imports":           OFF,
     "no-this-alias":                [ERROR, { allowedNames: ["self", "that"] }],
     "parameter-properties":         OFF,
-    "typedef":                      [ERROR, { arrowParameter: true, memberVariableDeclaration: true, parameter: true, propertyDeclaration: true, variableDeclaration: true }]
+    "typedef":                      OFF
 };
 const formattedSupportedRules = Object.fromEntries(Object.entries(supportedRules).map(([key, value]) => [`@typescript-eslint/${key}`, value]));
 
@@ -43,7 +43,7 @@ const extensionRules = {
     "no-unused-vars":              ERROR,
     "no-use-before-define":        ERROR,
     "no-useless-constructor":      ERROR,
-    "object-curly-spacing":        ERROR,
+    "object-curly-spacing":        [ERROR, ALWAYS],
     // TODO padding-line-between-statements
     "quotes":                      ERROR,
     "require-await":               ERROR,
