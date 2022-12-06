@@ -1,6 +1,6 @@
 const { ERROR, OFF, ALWAYS, NEVER } = require("./Constants");
 
-let supportedTypeScriptEslintRules = {
+const supportedTypeScriptEslintRules = Object.fromEntries(Object.entries({
     "array-type":                      [ERROR, { default: "array-simple" }],
     "member-delimiter-style":          [ERROR, { multiline: { delimiter: "semi", requireLast: true }, multilineDetection: "brackets", singleline: { delimiter: "semi", requireLast: true } }],
     "no-confusing-void-expression":    OFF,
@@ -12,8 +12,7 @@ let supportedTypeScriptEslintRules = {
     "parameter-properties":            OFF,
     "prefer-readonly-parameter-types": OFF,
     "typedef":                         OFF
-};
-supportedTypeScriptEslintRules = Object.fromEntries(Object.entries(supportedTypeScriptEslintRules).map(([key, value]) => [`@typescript-eslint/${key}`, value]));
+}).map(([key, value]) => [`@typescript-eslint/${key}`, value]));
 
 let extensionTypeScriptEslintRules = {
     "brace-style":                 ERROR,
@@ -30,7 +29,7 @@ let extensionTypeScriptEslintRules = {
     "no-dupe-class-members":       ERROR,
     "no-duplicate-imports":        ERROR,
     "no-empty-function":           ERROR,
-    "no-extra-parens":             [ERROR, "all", { enforceForArrowConditionals: false, returnAssign: false }],
+    "no-extra-parens":             [ERROR, "all", { enforceForArrowConditionals: false, ignoreJSX: "all", returnAssign: false }],
     "no-extra-semi":               ERROR,
     "no-implied-eval":             ERROR,
     "no-invalid-this":             ERROR,
@@ -55,9 +54,9 @@ let extensionTypeScriptEslintRules = {
     "space-before-function-paren": [ERROR, { anonymous: ALWAYS, asyncArrow: ALWAYS, named: NEVER }],
     "space-infix-ops":             ERROR
 };
-extensionTypeScriptEslintRules = Object.fromEntries([...Object.entries(extensionTypeScriptEslintRules).map(([key]) => [key, OFF]), ...Object.entries(extensionTypeScriptEslintRules).map(([key, value]) => [`@typescript-eslint/${key}`, value])]);
+extensionTypeScriptEslintRules = Object.fromEntries([
+    ...Object.entries(extensionTypeScriptEslintRules).map(([key]) => [key, OFF]),
+    ...Object.entries(extensionTypeScriptEslintRules).map(([key, value]) => [`@typescript-eslint/${key}`, value])
+]);
 
-module.exports = {
-    ...supportedTypeScriptEslintRules,
-    ...extensionTypeScriptEslintRules
-};
+module.exports = { ...supportedTypeScriptEslintRules, ...extensionTypeScriptEslintRules };

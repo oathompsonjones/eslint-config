@@ -5,11 +5,11 @@ This package provides ESLint configurations for various types of JavaScript or T
 ### Supported Configurations
 - JavaScript
     - [x] Node
-    - [ ] React
+    - [x] React
     - [x] Browser
 - TypeScript
     - [x] Node
-    - [ ] React
+    - [x] React
     - [x] Browser
 
 ### How to use a configuration

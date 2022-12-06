@@ -1,6 +1,6 @@
 const { ERROR, WARN, OFF, AS_NEEDED, CONSISTENT, CONSISTENT_AS_NEEDED, ALWAYS, NEVER } = require("./Constants");
 
-const eslintRules = {
+module.exports = {
     "accessor-pairs":                   OFF,
     "array-bracket-newline":            [ERROR, { multiline: true }],
     "array-element-newline":            [ERROR, CONSISTENT],
@@ -33,7 +33,7 @@ const eslintRules = {
     "no-continue":                      OFF,
     "no-div-regex":                     OFF,
     "no-else-return":                   [ERROR, { allowElseIf: false }],
-    "no-extra-parens":                  [ERROR, "all", { enforceForArrowConditionals: false, returnAssign: false }],
+    "no-extra-parens":                  [ERROR, "all", { enforceForArrowConditionals: false, ignoreJSX: "all", returnAssign: false }],
     "no-implicit-coercion":             [ERROR, { allow: ["!!"] }],
     "no-inner-declarations":            OFF,
     "no-labels":                        OFF,
@@ -58,5 +58,3 @@ const eslintRules = {
     "wrap-iife":                        [ERROR, "inside"],
     "yield-star-spacing":               [ERROR, "after"]
 };
-
-module.exports = eslintRules;
