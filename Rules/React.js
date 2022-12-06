@@ -21,5 +21,6 @@ module.exports = Object.fromEntries(Object.entries({
     "no-set-state":                  OFF,
     "no-unescaped-entities":         OFF,
     "prefer-es6-class":              [ERROR, NEVER],
-    "react-in-jsx-scope":            OFF
+    "react-in-jsx-scope":            OFF,
+    "require-default-props":         OFF
 }).map(([key, value]) => [`react/${key}`, value]));
