@@ -20,6 +20,7 @@ module.exports = {
     "indent":                           [ERROR, 4, { SwitchCase: 1 }],
     "init-declarations":                OFF,
     "key-spacing":                      [ERROR, { align: "value" }],
+    "lines-around-comment":             OFF,
     "max-depth":                        [ERROR, { max: 5 }],
     "max-len":                          [ERROR, { code: 150, ignoreRegExpLiterals: true, ignoreStrings: true, ignoreTemplateLiterals: true, ignoreUrls: true }],
     "max-lines":                        [ERROR, { max: 750, skipBlankLines: true, skipComments: true }],
