@@ -40,7 +40,6 @@ let extensionTypeScriptEslintRules = {
     "no-restricted-imports":       ERROR,
     "no-shadow":                   ERROR,
     "no-throw-literal":            ERROR,
-    "no-underscore-dangle":        [ERROR, { allowAfterSuper: true, allowAfterThis: true }],
     "no-unused-expressions":       ERROR,
     "no-unused-vars":              ERROR,
     "no-use-before-define":        ERROR,
