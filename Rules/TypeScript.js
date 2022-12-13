@@ -2,7 +2,9 @@ const { ERROR, OFF, ALWAYS, NEVER } = require("./Constants");
 
 const supportedTypeScriptEslintRules = Object.fromEntries(Object.entries({
     "array-type":                      [ERROR, { default: "array-simple" }],
+    "camel-case":                      OFF,
     "member-delimiter-style":          [ERROR, { multiline: { delimiter: "semi", requireLast: true }, multilineDetection: "brackets", singleline: { delimiter: "semi", requireLast: true } }],
+    "naming-convention":               [ERROR, { format: ["camelCase"], leadingUnderscore: "allow", selector: "default", trailingUnderscore: "allow" }, { format: ["camelCase", "UPPER_CASE", "PascalCase"], leadingUnderscore: "allow", selector: "variableLike", trailingUnderscore: "allow" }, { format: ["PascalCase"], selector: "typeLike" }, { format: ["camelCase", "PascalCase"], selector: "function" }],
     "no-confusing-void-expression":    OFF,
     "no-inferrable-types":             OFF,
     "no-non-null-assertion":           OFF,
