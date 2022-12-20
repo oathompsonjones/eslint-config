@@ -13,7 +13,9 @@ const supportedTypeScriptEslintRules = Object.fromEntries(Object.entries({
     "no-type-alias":                   OFF,
     "parameter-properties":            OFF,
     "prefer-readonly-parameter-types": OFF,
-    "typedef":                         OFF
+    "typedef":                         OFF,
+    // eslint-disable-next-line id-length
+    "unified-signatures":              [ERROR, { ignoreDifferentlyNamedParameters: true }]
 }).map(([key, value]) => [`@typescript-eslint/${key}`, value]));
 
 let extensionTypeScriptEslintRules = {
