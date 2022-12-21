@@ -36,6 +36,7 @@ module.exports = {
     "no-div-regex":                     OFF,
     "no-else-return":                   [ERROR, { allowElseIf: false }],
     "no-extra-parens":                  [ERROR, "all", { enforceForArrowConditionals: false, ignoreJSX: "all", returnAssign: false }],
+    "no-fallthrough":                   OFF,
     "no-implicit-coercion":             [ERROR, { allow: ["!!"] }],
     "no-inner-declarations":            OFF,
     "no-labels":                        OFF,
