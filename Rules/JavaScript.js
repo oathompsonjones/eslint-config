@@ -45,7 +45,7 @@ module.exports = {
     "no-plusplus":                      OFF,
     "no-ternary":                       OFF,
     "no-undefined":                     OFF,
-    "no-underscore-dangle":             [ERROR, { allowAfterSuper: true, allowAfterThis: true }],
+    "no-underscore-dangle":             OFF,
     "no-void":                          OFF,
     "no-warning-comments":              OFF,
     "nonblock-statement-body-position": [ERROR, "below"],
