@@ -3,6 +3,7 @@ const { ERROR, OFF, ALWAYS, NEVER } = require("./Constants");
 const supportedTypeScriptEslintRules = Object.fromEntries(Object.entries({
     "array-type":                      [ERROR, { default: "array-simple" }],
     "camel-case":                      OFF,
+    "key-spacing":                     [ERROR, { align: "value" }],
     "member-delimiter-style":          [ERROR, { multiline: { delimiter: "semi", requireLast: true }, multilineDetection: "brackets", singleline: { delimiter: "semi", requireLast: true } }],
     "naming-convention":               [ERROR, { format: ["camelCase"], leadingUnderscore: "allow", selector: "default", trailingUnderscore: "allow" }, { format: ["camelCase", "UPPER_CASE", "PascalCase"], leadingUnderscore: "allow", selector: ["property", "variableLike"], trailingUnderscore: "allow" }, { format: ["PascalCase"], selector: ["typeLike", "enum", "enumMember"] }, { format: ["camelCase", "PascalCase"], selector: "function" }],
     "no-confusing-void-expression":    OFF,
