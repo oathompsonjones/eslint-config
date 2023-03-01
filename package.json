@@ -1,10 +1,10 @@
 {
     "name": "@oathompsonjones/eslint-config",
-    "version": "0.0.35",
-    "description": "Provides ESLint rules for various different situations.",
-    "main": "index.js",
+    "version": "0.0.36",
+    "description": "Provides my ESLint configuration.",
+    "main": ".eslintrc.js",
     "type": "commonjs",
-    "peerDependencies": {
+    "devDependencies": {
         "@typescript-eslint/eslint-plugin": "^5.45.0",
         "@typescript-eslint/parser": "^5.45.0",
         "eslint": "^8.28.0",
