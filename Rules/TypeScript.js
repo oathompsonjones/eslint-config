@@ -53,7 +53,7 @@ const rules = {
     "space-infix-ops": ERROR,
     "typedef": OFF,
     // eslint-disable-next-line id-length
-    "unified-signatures": [ERROR, { ignoreDifferentlyNamedParameters: false }]
+    "unified-signatures": OFF
 };
 
 for (const key in rules) {
