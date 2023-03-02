@@ -1,10 +1,10 @@
-module.exports = {
-    ALWAYS:               "always",
-    AS_NEEDED:            "as-needed",
-    CONSISTENT:           "consistent",
-    CONSISTENT_AS_NEEDED: "consistent-as-needed",
-    ERROR:                "error",
-    NEVER:                "never",
-    OFF:                  "off",
-    WARN:                 "warn"
-};
+const ALWAYS = "always";
+const AS_NEEDED = "as-needed";
+const CONSISTENT = "consistent";
+const CONSISTENT_AS_NEEDED = "consistent-as-needed";
+const ERROR = "error";
+const NEVER = "never";
+const OFF = "off";
+const WARN = "warn";
+
+module.exports = { ALWAYS, AS_NEEDED, CONSISTENT, CONSISTENT_AS_NEEDED, ERROR, NEVER, OFF, WARN };
