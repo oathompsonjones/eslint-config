@@ -21,7 +21,7 @@ const jsRules = {
     "init-declarations": OFF,
     "lines-around-comment": OFF,
     "max-depth": [ERROR, { max: 5 }],
-    "max-len": [ERROR, { code: 135, ignoreRegExpLiterals: true, ignoreStrings: true, ignoreTemplateLiterals: true, ignoreUrls: true }],
+    "max-len": [ERROR, { code: 135 }],
     "max-lines": [ERROR, { max: 750, skipBlankLines: true, skipComments: true }],
     "max-lines-per-function": [ERROR, { max: 150, skipBlankLines: true, skipComments: true }],
     "max-params": [ERROR, 5],
