@@ -15,7 +15,17 @@ const reactRules = Object.fromEntries(Object.entries({
     "jsx-one-expression-per-line": OFF,
     "jsx-props-no-spreading": OFF,
     "jsx-tag-spacing": [ERROR, { afterOpening: NEVER, beforeClosing: NEVER, beforeSelfClosing: ALWAYS, closingSlash: NEVER }],
-    "jsx-wrap-multilines": [ERROR, { arrow: "parens-new-line", assignment: "parens-new-line", condition: "ignore", declaration: "parens-new-line", logical: "ignore", prop: "ignore", return: "parens-new-line" }],
+    "jsx-wrap-multilines": [
+        ERROR, {
+            arrow: "parens-new-line",
+            assignment: "parens-new-line",
+            condition: "ignore",
+            declaration: "parens-new-line",
+            logical: "ignore",
+            prop: "ignore",
+            return: "parens-new-line"
+        }
+    ],
     "no-adjacent-inline-elements": OFF,
     "no-array-index-key": OFF,
     "no-set-state": OFF,

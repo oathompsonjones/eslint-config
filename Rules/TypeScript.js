@@ -13,8 +13,32 @@ const rules = {
     "init-declarations": OFF,
     "keyword-spacing": ERROR,
     "lines-between-class-members": ERROR,
-    "member-delimiter-style": [ERROR, { multiline: { delimiter: "semi", requireLast: true }, multilineDetection: "brackets", singleline: { delimiter: "semi", requireLast: true } }],
-    "naming-convention": [ERROR, { format: ["camelCase"], leadingUnderscore: "allow", selector: "default", trailingUnderscore: "allow" }, { format: ["camelCase", "UPPER_CASE", "PascalCase"], leadingUnderscore: "allow", selector: ["property", "variableLike"], trailingUnderscore: "allow" }, { format: ["PascalCase"], selector: ["typeLike", "enum", "enumMember"] }, { format: ["camelCase", "PascalCase"], selector: "function" }],
+    "member-delimiter-style": [
+        ERROR, {
+            multiline: { delimiter: "semi", requireLast: true },
+            multilineDetection: "brackets",
+            singleline: { delimiter: "semi", requireLast: true }
+        }
+    ],
+    "naming-convention": [
+        ERROR, {
+            format: ["camelCase"],
+            leadingUnderscore: "allow",
+            selector: "default",
+            trailingUnderscore: "allow"
+        }, {
+            format: ["camelCase", "UPPER_CASE", "PascalCase"],
+            leadingUnderscore: "allow",
+            selector: ["property", "variableLike"],
+            trailingUnderscore: "allow"
+        }, {
+            format: ["PascalCase"],
+            selector: ["typeLike", "enum", "enumMember"]
+        }, {
+            format: ["camelCase", "PascalCase"],
+            selector: "function"
+        }
+    ],
     "no-array-constructor": ERROR,
     "no-confusing-void-expression": OFF,
     "no-dupe-class-members": ERROR,
