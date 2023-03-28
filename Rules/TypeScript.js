@@ -12,6 +12,7 @@ const rules = {
     "indent": [ERROR, 4, { SwitchCase: 1 }],
     "init-declarations": OFF,
     "keyword-spacing": ERROR,
+    "lines-around-comment": OFF,
     "lines-between-class-members": ERROR,
     "member-delimiter-style": [
         ERROR, {
@@ -76,7 +77,6 @@ const rules = {
     "space-before-function-paren": [ERROR, { anonymous: ALWAYS, asyncArrow: ALWAYS, named: NEVER }],
     "space-infix-ops": ERROR,
     "typedef": OFF,
-    // eslint-disable-next-line id-length
     "unified-signatures": OFF
 };
 
