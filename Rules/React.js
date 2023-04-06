@@ -4,7 +4,7 @@ const reactRules = Object.fromEntries(Object.entries({
     "boolean-prop-naming": OFF,
     "display-name": OFF,
     "forbid-component-props": OFF,
-    "function-component-definition": [ERROR, { namedComponents: "arrow-function", unnamedComponents: "arrow-function" }],
+    "function-component-definition": [ERROR, { namedComponents: "function-declaration", unnamedComponents: "arrow-function" }],
     "jsx-child-element-spacing": OFF,
     "jsx-first-prop-new-line": [ERROR, "multiline-multiprop"],
     "jsx-max-depth": [ERROR, { max: 5 }],
