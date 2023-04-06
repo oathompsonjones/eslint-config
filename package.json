@@ -1,13 +1,13 @@
 {
     "name": "@oathompsonjones/eslint-config",
-    "version": "0.0.45",
+    "version": "0.0.46",
     "description": "Provides my ESLint configuration.",
     "main": ".eslintrc.js",
     "type": "commonjs",
     "dependencies": {
-        "@typescript-eslint/eslint-plugin": "^5.54.0",
-        "@typescript-eslint/parser": "^5.54.0",
-        "eslint": "^8.35.0",
+        "@typescript-eslint/eslint-plugin": "^5.57.1",
+        "@typescript-eslint/parser": "^5.57.1",
+        "eslint": "^8.37.0",
         "eslint-plugin-react": "^7.32.2"
     },
     "repository": {
