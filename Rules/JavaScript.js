@@ -28,6 +28,7 @@ const jsRules = {
     "max-statements": [ERROR, 25],
     "multiline-comment-style": [ERROR, "bare-block"],
     "multiline-ternary": OFF,
+    "new-cap": OFF,
     "no-bitwise": OFF,
     "no-confusing-void": OFF,
     "no-console": WARN,
