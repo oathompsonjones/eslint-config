@@ -11,6 +11,7 @@ const reactRules = Object.fromEntries(Object.entries({
     "jsx-max-props-per-line": OFF,
     "jsx-newline": OFF,
     "jsx-no-bind": OFF,
+    "jsx-no-constructed-context-values": OFF,
     "jsx-no-literals": OFF,
     "jsx-one-expression-per-line": OFF,
     "jsx-props-no-spreading": OFF,
