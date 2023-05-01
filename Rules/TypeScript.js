@@ -63,7 +63,7 @@ const rules = {
     "no-type-alias": OFF,
     "no-unused-expressions": ERROR,
     "no-unused-vars": ERROR,
-    "no-use-before-define": ERROR,
+    "no-use-before-define": [ERROR, { functions: false }],
     "no-useless-constructor": ERROR,
     "object-curly-spacing": [ERROR, ALWAYS],
     // TODO padding-line-between-statements

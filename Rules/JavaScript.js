@@ -46,6 +46,7 @@ const jsRules = {
     "no-ternary": OFF,
     "no-undefined": OFF,
     "no-underscore-dangle": OFF,
+    "no-use-before-define": [ERROR, { functions: false }],
     "no-void": OFF,
     "no-warning-comments": OFF,
     "nonblock-statement-body-position": [ERROR, "below"],
