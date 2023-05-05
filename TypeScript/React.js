@@ -4,7 +4,7 @@ const reactRules = require("../Rules/React");
 const tsReactRules = require("../Rules/TypeScriptReact");
 
 module.exports = {
-    env: { browser: true, es6: true, node: true },
+    env: { browser: true, es2022: true, node: true },
     extends: ["eslint:all", "plugin:@typescript-eslint/all", "plugin:react/all"],
     ignorePatterns: ["build"],
     parser: "@typescript-eslint/parser",
