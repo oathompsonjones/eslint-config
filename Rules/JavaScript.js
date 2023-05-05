@@ -7,6 +7,7 @@ const jsRules = {
     "arrow-body-style": [ERROR, AS_NEEDED],
     "complexity": OFF,
     "consistent-return": OFF,
+    "consistent-this": OFF,
     "curly": [ERROR, "multi-or-nest", CONSISTENT],
     "default-case": OFF,
     "dot-location": [ERROR, "property"],

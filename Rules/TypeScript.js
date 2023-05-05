@@ -58,7 +58,7 @@ const rules = {
     "no-require-imports": OFF,
     "no-restricted-imports": ERROR,
     "no-shadow": ERROR,
-    "no-this-alias": [ERROR, { allowedNames: ["self", "that"] }],
+    "no-this-alias": OFF,
     "no-throw-literal": ERROR,
     "no-type-alias": OFF,
     "no-unused-expressions": ERROR,
