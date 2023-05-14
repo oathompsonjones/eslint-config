@@ -30,6 +30,7 @@ const jsRules = {
     "multiline-comment-style": [ERROR, "bare-block"],
     "multiline-ternary": OFF,
     "new-cap": OFF,
+    "newline-per-chained-call": OFF,
     "no-bitwise": OFF,
     "no-confusing-void": OFF,
     "no-console": WARN,
