@@ -18,59 +18,16 @@ This package provides ESLint configurations for various types of JavaScript or T
 
 - Step 2: Create your .eslintrc file
     Create a file in the root of your project called `.eslintrc`.
-    Paste the following code, depending on what kind of project you are making:
-    - JavaScript
-        - Node - The default export is for a JavaScript Node project.
-            ```json
-            {
-                "extends": "@oathompsonjones/eslint-config"
-            }
-            ```
-            You can also do use
-            ```json
-            {
-                "extends": "@oathompsonjones/eslint-config/JavaScript/Node"
-            }
-            ```
-        - Browser
-            ```json
-            {
-                "extends": "@oathompsonjones/eslint-config/JavaScript/Browser"
-            }
-            ```
-        - React
-            ```json
-            {
-                "extends": "@oathompsonjones/eslint-config/JavaScript/React"
-            }
-            ```
-    - TypeScript
-        - Node
-            ```json
-            {
-                "extends": "@oathompsonjones/eslint-config/TypeScript/Node",
-                "parserOptions": {
-                    "project": "./tsconfig.json"
-                }
-            }
-            ```
-        - Browser
-            ```json
-            {
-                "extends": "@oathompsonjones/eslint-config/TypeScript/Browser",
-                "parserOptions": {
-                    "project": "./tsconfig.json"
-                }
-            }
-            ```
-        - React
-            ```json
-            {
-                "extends": "@oathompsonjones/eslint-config/TypeScript/React",
-                "parserOptions": {
-                    "project": "./tsconfig.json"
-                }
-            }
-            ```
-
-- Step 3: You're done!
+    Paste the following code:
+    ```json
+    {
+        "extends": "@oathompsonjones/eslint-config"
+    }
+    ```
+    This will enable the default configuration, which is suitable for most use cases, as it will automatically adapt the configuration for each file type (js/ts/jsx/tsx).
+    You can also specify JavaScript vs TypeScript, and which environment you are using like this:
+    ```json
+    {
+        "extends": "@oathompsonjones/eslint-config/[JavaScript|TypeScript]/[Node|Browser|React]"
+    }
+    ```
