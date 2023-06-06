@@ -1,4 +1,4 @@
-const { ALWAYS, ERROR, NEVER, OFF } = require("./Constants");
+const { ERROR_LEVEL: { ALWAYS, ERROR, NEVER, OFF } } = require("../Constants");
 
 const reactRules = Object.fromEntries(Object.entries({
     "boolean-prop-naming": OFF,
@@ -6,6 +6,7 @@ const reactRules = Object.fromEntries(Object.entries({
     "forbid-component-props": OFF,
     "function-component-definition": [ERROR, { namedComponents: "function-declaration", unnamedComponents: "arrow-function" }],
     "jsx-child-element-spacing": OFF,
+    "jsx-filename-extension": [ERROR, { extensions: [".jsx", ".tsx"] }],
     "jsx-first-prop-new-line": [ERROR, "multiline-multiprop"],
     "jsx-max-depth": [ERROR, { max: 5 }],
     "jsx-max-props-per-line": OFF,

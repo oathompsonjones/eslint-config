@@ -5,9 +5,10 @@
     "main": ".eslintrc.js",
     "type": "commonjs",
     "dependencies": {
-        "@typescript-eslint/eslint-plugin": "^5.59.7",
-        "@typescript-eslint/parser": "^5.59.7",
-        "eslint": "^8.41.0",
+        "@next/eslint-plugin-next": "^13.4.4",
+        "@typescript-eslint/eslint-plugin": "^5.59.9",
+        "@typescript-eslint/parser": "^5.59.9",
+        "eslint": "^8.42.0",
         "eslint-plugin-react": "^7.32.2"
     },
     "repository": {

@@ -1,15 +1,16 @@
 const jsRules = require("./Rules/JavaScript");
 const tsRules = require("./Rules/TypeScript");
 const reactRules = require("./Rules/React");
-const tsReactRules = require("./Rules/TypeScriptReact");
+const nextRules = require("./Rules/Next");
+const { PLUGINS } = require("./Constants");
 
 module.exports = {
     env: { es2022: true, node: true },
-    extends: ["eslint:all"],
+    extends: [PLUGINS.ESLINT],
     ignorePatterns: ["build", "bin", "node_modules"],
     overrides: [
         {
-            extends: ["eslint:all", "plugin:@typescript-eslint/all"],
+            extends: [PLUGINS.ESLINT, PLUGINS.TYPESCRIPT],
             files: "**/*.ts",
             parser: "@typescript-eslint/parser",
             plugins: ["@typescript-eslint"],
@@ -17,21 +18,21 @@ module.exports = {
         },
         {
             env: { browser: true, es2022: true, node: true },
-            extends: ["eslint:all", "plugin:react/all"],
+            extends: [PLUGINS.ESLINT, PLUGINS.REACT, PLUGINS.NEXT],
             files: "**/*.jsx",
             parserOptions: { ecmaFeatures: { jsx: true }, ecmaVersion: "latest", sourceType: "module" },
-            plugins: ["react"],
-            rules: { ...jsRules, ...reactRules },
+            plugins: ["react", "@next/next"],
+            rules: { ...jsRules, ...reactRules, ...nextRules },
             settings: { react: { version: "detect" } }
         },
         {
             env: { browser: true, es2022: true, node: true },
-            extends: ["eslint:all", "plugin:@typescript-eslint/all", "plugin:react/all"],
+            extends: [PLUGINS.ESLINT, PLUGINS.TYPESCRIPT, PLUGINS.REACT, PLUGINS.NEXT],
             files: "**/*.tsx",
             parser: "@typescript-eslint/parser",
             parserOptions: { ecmaFeatures: { jsx: true }, ecmaVersion: "latest", sourceType: "module" },
-            plugins: ["@typescript-eslint", "react"],
-            rules: { ...jsRules, ...tsRules, ...reactRules, ...tsReactRules },
+            plugins: ["@typescript-eslint", "react", "@next/next"],
+            rules: { ...jsRules, ...tsRules, ...reactRules, ...nextRules },
             settings: { react: { version: "detect" } }
         }
     ],

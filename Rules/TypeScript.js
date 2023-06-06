@@ -1,4 +1,4 @@
-const { ERROR, OFF, ALWAYS, NEVER } = require("./Constants");
+const { ERROR_LEVEL: { ERROR, OFF, ALWAYS, NEVER } } = require("../Constants");
 
 const rules = {
     "array-type": [ERROR, { default: "array-simple" }],
