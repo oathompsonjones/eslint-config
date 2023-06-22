@@ -1,6 +1,6 @@
 {
     "name": "@oathompsonjones/eslint-config",
-    "version": "0.0.57",
+    "version": "0.0.58",
     "description": "Provides my ESLint configuration.",
     "main": ".eslintrc.js",
     "type": "commonjs",
@@ -10,6 +10,7 @@
         "@typescript-eslint/eslint-plugin": "^5.59.9",
         "@typescript-eslint/parser": "^5.59.9",
         "eslint": "^8.42.0",
+        "eslint-config-next": "^13.4.7",
         "eslint-plugin-react": "^7.32.2",
         "typescript": "^5.1.3"
     },
