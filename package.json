@@ -1,6 +1,6 @@
 {
     "name": "@oathompsonjones/eslint-config",
-    "version": "0.0.58",
+    "version": "0.0.59",
     "description": "Provides my ESLint configuration.",
     "main": ".eslintrc.js",
     "type": "commonjs",

@@ -45,6 +45,7 @@ const rules = {
     "no-dupe-class-members": ERROR,
     "no-duplicate-imports": ERROR,
     "no-empty-function": ERROR,
+    "no-empty-interface": [ERROR, { allowSingleExtends: false }],
     "no-extra-parens": [ERROR, "all", { enforceForArrowConditionals: false, ignoreJSX: "all", returnAssign: false }],
     "no-extra-semi": ERROR,
     "no-implied-eval": ERROR,
