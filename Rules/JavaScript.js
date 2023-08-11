@@ -44,7 +44,14 @@ const jsRules = {
     "no-inline-comments": OFF,
     "no-inner-declarations": OFF,
     "no-labels": OFF,
-    "no-magic-numbers": OFF,
+    "no-magic-numbers": [
+        ERROR, {
+            ignore: [-1, 0, 1],
+            ignoreArrayIndexes: true,
+            ignoreClassFieldInitialValues: true,
+            ignoreDefaultValues: true
+        }
+    ],
     "no-mixed-operators": OFF,
     "no-param-reassign": OFF,
     "no-plusplus": OFF,
