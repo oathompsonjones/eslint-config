@@ -1,3 +1,4 @@
+/* eslint-disable no-magic-numbers */
 const { ERROR_LEVEL: { ERROR, WARN, OFF, AS_NEEDED, CONSISTENT, CONSISTENT_AS_NEEDED, ALWAYS, NEVER } } = require("../Constants");
 
 const jsRules = {
