@@ -7,7 +7,7 @@ const rules = {
     "camel-case": OFF,
     "comma-dangle": ERROR,
     "comma-spacing": ERROR,
-    "consistent-type-imports": [ERROR, { disallowTypeAnnotations: true, fixStyle: "inline-type-imports", prefer: "type-imports" }],
+    "consistent-type-imports": ERROR,
     "default-param-last": ERROR,
     "dot-notation": ERROR,
     "func-call-spacing": ERROR,
