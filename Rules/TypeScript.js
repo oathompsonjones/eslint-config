@@ -51,7 +51,7 @@ const rules = {
     "no-extra-parens": [ERROR, "all", { enforceForArrowConditionals: false, ignoreJSX: "all", returnAssign: false }],
     "no-extra-semi": ERROR,
     "no-implied-eval": ERROR,
-    "no-inferrable-types": OFF,
+    "no-inferrable-types": [ERROR, { ignoreParameters: true, ignoreProperties: true }],
     "no-invalid-this": ERROR,
     "no-loop-func": ERROR,
     "no-loss-of-precision": ERROR,
