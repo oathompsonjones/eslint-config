@@ -45,7 +45,6 @@ const rules = {
     "no-array-constructor": ERROR,
     "no-confusing-void-expression": OFF,
     "no-dupe-class-members": ERROR,
-    "no-duplicate-imports": ERROR,
     "no-empty-function": ERROR,
     "no-empty-interface": [ERROR, { allowSingleExtends: true }],
     "no-extra-parens": [ERROR, "all", { enforceForArrowConditionals: false, ignoreJSX: "all", returnAssign: false }],
