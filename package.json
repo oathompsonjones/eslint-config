@@ -1,10 +1,10 @@
 {
     "name": "@oathompsonjones/eslint-config",
-    "version": "0.0.68",
+    "version": "0.0.69",
     "description": "Provides my ESLint configuration.",
     "main": ".eslintrc.js",
     "type": "commonjs",
-    "devDependencies": {
+    "dependencies": {
         "@next/eslint-plugin-next": "^14.0.0",
         "@types/node": "^20.8.9",
         "@typescript-eslint/eslint-plugin": "^6.9.0",
