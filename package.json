@@ -4,13 +4,13 @@
     "description": "Provides my ESLint configuration.",
     "main": ".eslintrc.js",
     "type": "commonjs",
-    "peerDependencies": {
-        "@next/eslint-plugin-next": "^13.5.5",
-        "@types/node": "^20.8.7",
-        "@typescript-eslint/eslint-plugin": "^6.8.0",
-        "@typescript-eslint/parser": "^6.8.0",
-        "eslint": "^8.51.0",
-        "eslint-config-next": "^13.5.5",
+    "devDependencies": {
+        "@next/eslint-plugin-next": "^14.0.0",
+        "@types/node": "^20.8.9",
+        "@typescript-eslint/eslint-plugin": "^6.9.0",
+        "@typescript-eslint/parser": "^6.9.0",
+        "eslint": "^8.52.0",
+        "eslint-config-next": "^14.0.0",
         "eslint-plugin-react": "^7.33.2",
         "typescript": "^5.2.2"
     },
