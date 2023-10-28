@@ -38,6 +38,7 @@ const jsRules = {
     "no-console": WARN,
     "no-continue": OFF,
     "no-div-regex": OFF,
+    "no-duplicate-imports": OFF,
     "no-else-return": [ERROR, { allowElseIf: false }],
     "no-extra-parens": [ERROR, "all", { enforceForArrowConditionals: false, ignoreJSX: "all", returnAssign: false }],
     "no-fallthrough": OFF,

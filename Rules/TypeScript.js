@@ -32,7 +32,7 @@ const rules = {
         }, {
             format: ["camelCase", "UPPER_CASE", "PascalCase"],
             leadingUnderscore: "allow",
-            selector: ["property", "variableLike"],
+            selector: ["property", "variableLike", "import"],
             trailingUnderscore: "allow"
         }, {
             format: ["PascalCase"],
