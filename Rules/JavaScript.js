@@ -27,7 +27,7 @@ const jsRules = {
     "max-len": [ERROR, { code: 135 }],
     "max-lines": [ERROR, { max: 750, skipBlankLines: true, skipComments: true }],
     "max-lines-per-function": [ERROR, { max: 150, skipBlankLines: true, skipComments: true }],
-    "max-params": [ERROR, 5],
+    "max-params": [ERROR, { max: 5 }],
     "max-statements": [ERROR, 25],
     "multiline-comment-style": OFF,
     "multiline-ternary": OFF,

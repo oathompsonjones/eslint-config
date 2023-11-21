@@ -16,7 +16,7 @@ const rules = {
     "keyword-spacing": ERROR,
     "lines-around-comment": OFF,
     "lines-between-class-members": ERROR,
-    "max-params": [ERROR, 5],
+    "max-params": [ERROR, { max: 5 }],
     "member-delimiter-style": [
         ERROR, {
             multiline: { delimiter: "semi", requireLast: true },
