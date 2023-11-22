@@ -51,6 +51,7 @@ const jsRules = {
     "no-param-reassign": OFF,
     "no-plusplus": OFF,
     "no-ternary": OFF,
+    "no-trailing-spaces": ERROR,
     "no-undefined": OFF,
     "no-underscore-dangle": OFF,
     "no-use-before-define": [ERROR, { functions: false }],
