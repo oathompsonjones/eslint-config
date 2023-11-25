@@ -48,6 +48,7 @@ const jsRules = {
     "no-labels": OFF,
     "no-magic-numbers": OFF,
     "no-mixed-operators": OFF,
+    "no-multi-spaces": [ERROR],
     "no-param-reassign": OFF,
     "no-plusplus": OFF,
     "no-ternary": OFF,
