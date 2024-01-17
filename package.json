@@ -1,30 +1,34 @@
 {
     "name": "@oathompsonjones/eslint-config",
-    "version": "0.0.72",
+    "version": "1.0.0",
     "description": "Provides my ESLint configuration.",
-    "main": ".eslintrc.js",
-    "type": "commonjs",
-    "dependencies": {
-        "@next/eslint-plugin-next": "^14.0.3",
-        "@types/node": "^20.10.0",
-        "@typescript-eslint/eslint-plugin": "^6.12.0",
-        "@typescript-eslint/parser": "^6.12.0",
-        "eslint": "^8.54.0",
-        "eslint-config-next": "^14.0.3",
-        "eslint-plugin-react": "^7.33.2",
-        "typescript": "^5.3.2"
-    },
     "repository": {
-        "type": "git",
-        "url": "git+https://github.com/oathompsonjones/eslint-config.git"
+        "url": "https://github.com/oathompsonjones/eslint-config.git"
     },
+    "main": "build/index.js",
+    "type": "module",
     "scripts": {
-        "prepare": "eslint ."
+        "build": "tsc",
+        "lint": "eslint .",
+        "prepare": "eslint .",
+        "postinstall": "patch-package"
     },
     "author": "oathompsonjones",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/oathompsonjones/eslint-config/issues"
-    },
-    "homepage": "https://github.com/oathompsonjones/eslint-config#readme"
+    "license": "MIT",
+    "dependencies": {
+        "@eslint-types/typescript-eslint": "^6.18.1",
+        "@milahu/patch-package": "^6.4.14",
+        "@next/eslint-plugin-next": "^14.0.4",
+        "@oathompsonjones/ts-config": "^0.0.29",
+        "@types/eslint": "^8.56.2",
+        "@types/node": "^20.11.4",
+        "@typescript-eslint/eslint-plugin": "^6.19.0",
+        "@typescript-eslint/parser": "^6.19.0",
+        "eslint": "^8.56.0",
+        "eslint-config-next": "^14.0.4",
+        "eslint-define-config": "^2.1.0",
+        "eslint-plugin-react": "^7.33.2",
+        "globals": "^13.24.0",
+        "typescript": "^5.3.3"
+    }
 }
