@@ -279,7 +279,18 @@ export default {
     "@typescript-eslint/no-unused-expressions": "error",
     "no-unused-expressions": "off",
 
-    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-unused-vars": [
+        "error", {
+            args: "after-used",
+            argsIgnorePattern: "^_",
+            caughtErrors: "none",
+            caughtErrorsIgnorePattern: "^_",
+            destructuredArrayIgnorePattern: "^_",
+            ignoreRestSiblings: true,
+            vars: "all",
+            varsIgnorePattern: "^_",
+        },
+    ],
     "no-unused-vars": "off",
 
     "@typescript-eslint/no-use-before-define": ["error", { functions: false }],
