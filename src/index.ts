@@ -46,6 +46,7 @@ export default function createConfig(tsConfigJSON?: string): FlatESLintConfig[] 
     const linterOptions = { reportUnusedDisableDirectives: true };
 
     const defaultConfig = [
+        { ignores },
         // Config for .js files.
         {
             files: ["**/*.js"],
