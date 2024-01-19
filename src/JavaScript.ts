@@ -216,15 +216,7 @@ export default {
     "no-undef": "error",
     "no-undef-init": "error",
     "no-undefined": "off",
-    "no-underscore-dangle": [
-        "error", {
-            allowAfterSuper: true,
-            allowAfterThis: true,
-            allowFunctionParams: true,
-            allowInArrayDestructuring: true,
-            enforceInMethodNames: true,
-        },
-    ],
+    "no-underscore-dangle": "off",
     "no-unexpected-multiline": "error",
     "no-unmodified-loop-condition": "error",
     "no-unneeded-ternary": ["error", { defaultAssignment: false }],
