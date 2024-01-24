@@ -417,5 +417,6 @@ export default {
 
     "@typescript-eslint/unbound-method": "error",
 
-    "@typescript-eslint/unified-signatures": "error",
+    // eslint-disable-next-line id-length
+    "@typescript-eslint/unified-signatures": ["error", { ignoreDifferentlyNamedParameters: true }],
 } satisfies Rules;
