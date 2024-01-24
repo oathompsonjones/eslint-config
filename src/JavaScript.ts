@@ -1,10 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import type { EslintRules } from "eslint-define-config";
 
-export const SPACES = 4;
-export const MAX_LINES = 25;
-export const ALLOWED_NUMBERS = 201;
-
 export default {
     "accessor-pairs": "error",
     "array-bracket-newline": ["error", { multiline: true }],
@@ -24,7 +20,7 @@ export default {
     "comma-dangle": ["error", "always-multiline"],
     "comma-spacing": "error",
     "comma-style": "error",
-    complexity: "error",
+    complexity: ["error", 50],
     "computed-property-spacing": "error",
     "consistent-return": ["error", { treatUndefinedAsUnspecified: true }],
     "consistent-this": "error",
@@ -55,7 +51,7 @@ export default {
     "id-length": ["error", { max: 30, min: 1 }],
     "id-match": "off",
     "implicit-arrow-linebreak": ["error", "beside"],
-    indent: ["error", SPACES, { SwitchCase: 1 }],
+    indent: ["error", 4, { SwitchCase: 1 }],
     "indent-legacy": "off",
     "init-declarations": "off",
     "jsx-quotes": "error",
@@ -74,7 +70,7 @@ export default {
     "max-lines-per-function": ["error", { max: 150, skipBlankLines: true, skipComments: true }],
     "max-nested-callbacks": ["error", { max: 5 }],
     "max-params": ["error", { max: 5 }],
-    "max-statements": ["error", MAX_LINES],
+    "max-statements": ["error", 25],
     "max-statements-per-line": "error",
     "multiline-comment-style": "off",
     "multiline-ternary": ["error", "always-multiline"],
@@ -147,14 +143,7 @@ export default {
     "no-lonely-if": "error",
     "no-loop-func": "error",
     "no-loss-of-precision": "error",
-    "no-magic-numbers": [
-        "error", {
-            ignore: Array(ALLOWED_NUMBERS).fill(0).map((_, i) => i - 100),
-            ignoreArrayIndexes: true,
-            ignoreClassFieldInitialValues: true,
-            ignoreDefaultValues: true,
-        },
-    ],
+    "no-magic-numbers": "off",
     "no-misleading-character-class": "error",
     "no-mixed-operators": "off",
     "no-mixed-requires": "error",

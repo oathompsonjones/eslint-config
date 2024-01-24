@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/naming-convention, sort-keys */
-import { ALLOWED_NUMBERS, SPACES } from "./JavaScript.js";
 import type { EslintRules, RuleConfig } from "eslint-define-config";
 import type { RuleOptions as TypeScriptRules } from "@eslint-types/typescript-eslint/types";
 
@@ -74,7 +73,7 @@ export default {
     "@typescript-eslint/func-call-spacing": "error",
     "func-call-spacing": "off",
 
-    "@typescript-eslint/indent": ["error", SPACES, { SwitchCase: 1 }],
+    "@typescript-eslint/indent": ["error", 4, { SwitchCase: 1 }],
     indent: "off",
 
     "@typescript-eslint/init-declarations": "off",
@@ -198,18 +197,7 @@ export default {
     "@typescript-eslint/no-loss-of-precision": "error",
     "no-loss-of-precision": "off",
 
-    "@typescript-eslint/no-magic-numbers": [
-        "error", {
-            ignore: Array(ALLOWED_NUMBERS).fill(0).map((_, i) => i - 100),
-            ignoreArrayIndexes: true,
-            ignoreClassFieldInitialValues: true,
-            ignoreDefaultValues: true,
-            ignoreEnums: true,
-            ignoreNumericLiteralTypes: true,
-            ignoreReadonlyClassProperties: true,
-            ignoreTypeIndexes: true,
-        },
-    ],
+    "@typescript-eslint/no-magic-numbers": "off",
     "no-magic-numbers": "off",
 
     "@typescript-eslint/no-meaningless-void-operator": "error",
