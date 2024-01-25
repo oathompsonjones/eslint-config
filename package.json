@@ -10,14 +10,12 @@
     "scripts": {
         "build": "tsc",
         "lint": "eslint .",
-        "prepare": "pnpm build && pnpm lint",
-        "postinstall": "patch-package"
+        "prepare": "pnpm build && pnpm lint"
     },
     "author": "oathompsonjones",
     "license": "MIT",
     "dependencies": {
         "@eslint-types/typescript-eslint": "^6.18.1",
-        "@milahu/patch-package": "^6.4.14",
         "@next/eslint-plugin-next": "^14.1.0",
         "@oathompsonjones/ts-config": "^0.0.31",
         "@types/eslint": "^8.56.2",
@@ -30,5 +28,10 @@
         "eslint-plugin-react": "^7.33.2",
         "globals": "^13.24.0",
         "typescript": "^5.3.3"
+    },
+    "pnpm": {
+        "patchedDependencies": {
+            "eslint-define-config@2.1.0": "patches/eslint-define-config@2.1.0.patch"
+        }
     }
 }
