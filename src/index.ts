@@ -1,20 +1,19 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import type { ESLint, Linter } from "eslint";
+import type { ESLint } from "eslint";
 import type { FlatESLintConfig } from "eslint-define-config";
 import globals from "globals";
 import jsRules from "./JavaScript.js";
+import nextPlugin from "@next/eslint-plugin-next";
 import nextRules from "./Next.js";
+import reactPlugin from "eslint-plugin-react";
 import reactRules from "./React.js";
 import tsParser from "@typescript-eslint/parser";
 import tsPlugin from "@typescript-eslint/eslint-plugin";
 import tsRules from "./TypeScript.js";
-/// <reference types="@eslint-types/typescript-eslint" />
 
 const ts = tsPlugin as unknown as ESLint.Plugin;
-// @ts-expect-error - Has no TypeScript or Declaration files
-const react = await import("eslint-plugin-react") as ESLint.Plugin;
-// @ts-expect-error - Has no TypeScript or Declaration files
-const next = await import("@next/eslint-plugin-next") as ESLint.Plugin;
+const react = reactPlugin as unknown as ESLint.Plugin;
+const next = nextPlugin as unknown as ESLint.Plugin;
 
 /**
  * Takes the path to your tsconfig.json file and returns a config for ESLint.
@@ -121,20 +120,5 @@ export default function createConfig(tsConfigJSON?: string): FlatESLintConfig[] 
             ...defaultConfig,
             // Provide ESLint with the path to your tsconfig.json file.
             { languageOptions: { parserOptions: { project: tsConfigJSON } } },
-            // Ignore ESLint directives in any output files as the TypeScript rules won't be found otherwise.
-            {
-                files: ignores,
-                processor: {
-                    postprocess: (messages) => ([] as Linter.LintMessage[]).concat(...messages),
-                    preprocess: (text, filename) => [
-                        {
-                            filename,
-                            text: text
-                                .replace(/\/\*\seslint-.+\*\//gu, "/* ESLINT_DIRECTIVE */")
-                                .replace(/\/\/\seslint-.+\n/gu, "/* ESLINT_DIRECTIVE */"),
-                        },
-                    ],
-                },
-            },
         ];
 }

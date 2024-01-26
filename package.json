@@ -1,6 +1,6 @@
 {
     "name": "@oathompsonjones/eslint-config",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "description": "Provides my ESLint configuration.",
     "repository": {
         "url": "https://github.com/oathompsonjones/eslint-config.git"
@@ -19,7 +19,7 @@
         "@next/eslint-plugin-next": "^14.1.0",
         "@oathompsonjones/ts-config": "^0.0.31",
         "@types/eslint": "^8.56.2",
-        "@types/node": "^20.11.6",
+        "@types/node": "^20.11.7",
         "@typescript-eslint/eslint-plugin": "^6.19.1",
         "@typescript-eslint/parser": "^6.19.1",
         "eslint": "^8.56.0",
