@@ -2,7 +2,7 @@ name: publish
 
 on:
   workflow_run:
-    workflows: ["lint-and-test"]
+    workflows: ["lint"]
     branches: [main, master]
     types: 
       - completed
