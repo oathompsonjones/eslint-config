@@ -22,7 +22,7 @@ const next = nextPlugin as unknown as ESLint.Plugin;
 */
 export default function createConfig(tsConfigJSON?: string): FlatESLintConfig[] {
     // Folders to ignore.
-    const ignores = ["build", "dist", "bin", "node_modules"].map((folder) => `**/${folder}/**`);
+    const ignores = ["build", "dist", "bin", "node_modules", ".next"].map((folder) => `**/${folder}/**`);
 
     // Used for React/NextJS.
     const parseJSX = { ecmaFeatures: { jsx: true } };
