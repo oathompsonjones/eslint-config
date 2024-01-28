@@ -135,6 +135,8 @@ export default {
     "@typescript-eslint/no-array-constructor": "error",
     "no-array-constructor": "off",
 
+    "@typescript-eslint/no-array-delete": "error",
+
     "@typescript-eslint/no-base-to-string": "error",
 
     "@typescript-eslint/no-confusing-non-null-assertion": "error",
@@ -360,6 +362,9 @@ export default {
     "@typescript-eslint/prefer-nullish-coalescing": "error",
 
     "@typescript-eslint/prefer-optional-chain": "error",
+
+    "@typescript-eslint/prefer-promise-reject-errors": "error",
+    "prefer-promise-reject-errors": "off",
 
     "@typescript-eslint/prefer-readonly": "error",
 
