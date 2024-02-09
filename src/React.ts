@@ -43,4 +43,4 @@ export default {
     "react/prefer-es6-class": ["error", "never"],
     "react/react-in-jsx-scope": "off",
     "react/require-default-props": "off",
-} as Record<string, RuleConfig>;
+} satisfies Record<string, RuleConfig>;

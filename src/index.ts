@@ -10,14 +10,17 @@ import reactRules from "./React.js";
 import tsParser from "@typescript-eslint/parser";
 import tsPlugin from "@typescript-eslint/eslint-plugin";
 import tsRules from "./TypeScript.js";
+import tsdocPlugin from "eslint-plugin-tsdoc";
+import tsdocRules from "./TSDoc.js";
 
 const ts = tsPlugin as unknown as ESLint.Plugin;
 const react = reactPlugin as unknown as ESLint.Plugin;
 const next = nextPlugin as unknown as ESLint.Plugin;
+const tsdoc = tsdocPlugin as unknown as ESLint.Plugin;
 
 /**
  * Takes the path to your tsconfig.json file and returns a config for ESLint.
- * @param tsConfigJSON The path to your tsconfig.json file.
+ * @param tsConfigJSON - The path to your tsconfig.json file.
  * @returns Your ESLint config.
 */
 export default function createConfig(tsConfigJSON?: string): FlatESLintConfig[] {
@@ -63,10 +66,14 @@ export default function createConfig(tsConfigJSON?: string): FlatESLintConfig[] 
                 parser: tsParser,
             },
             linterOptions,
-            plugins: { "@typescript-eslint": ts },
+            plugins: {
+                "@typescript-eslint": ts,
+                tsdoc,
+            },
             rules: {
                 ...jsRules,
                 ...tsRules,
+                ...tsdocRules,
             },
         },
         // Config for .jsx files.
@@ -103,10 +110,12 @@ export default function createConfig(tsConfigJSON?: string): FlatESLintConfig[] 
                 "@next/next": next,
                 "@typescript-eslint": ts,
                 react,
+                tsdoc,
             },
             rules: {
                 ...jsRules,
                 ...tsRules,
+                ...tsdocRules,
                 ...reactRules,
                 ...nextRules,
             },

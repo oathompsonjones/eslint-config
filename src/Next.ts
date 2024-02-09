@@ -23,4 +23,4 @@ export default {
     "@next/next/no-title-in-document-head": "error",
     "@next/next/no-typos": "error",
     "@next/next/no-unwanted-polyfillio": "error",
-} as Record<string, RuleConfig>;
+} satisfies Record<string, RuleConfig>;
