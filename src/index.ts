@@ -43,6 +43,14 @@ export default function createConfig(tsConfigJSON?: string): FlatESLintConfig[] 
         ...nodeGlobals,
         ...globals.browser,
     };
+    const tsGlobals = {
+        ...nodeGlobals,
+        NodeJS: true,
+    };
+    const reactTsGlobals = {
+        ...reactGlobals,
+        NodeJS: true,
+    };
 
     // Linter options.
     const linterOptions = { reportUnusedDisableDirectives: true };
@@ -62,7 +70,7 @@ export default function createConfig(tsConfigJSON?: string): FlatESLintConfig[] 
             files: ["**/*.ts"],
             ignores,
             languageOptions: {
-                globals: nodeGlobals,
+                globals: tsGlobals,
                 parser: tsParser,
             },
             linterOptions,
@@ -101,7 +109,7 @@ export default function createConfig(tsConfigJSON?: string): FlatESLintConfig[] 
             files: ["**/*.tsx"],
             ignores,
             languageOptions: {
-                globals: reactGlobals,
+                globals: reactTsGlobals,
                 parser: tsParser,
                 parserOptions: parseJSX,
             },

@@ -349,6 +349,8 @@ export default {
 
     "@typescript-eslint/prefer-enum-initializers": "error",
 
+    "@typescript-eslint/prefer-find": "error",
+
     "@typescript-eslint/prefer-for-of": "error",
 
     "@typescript-eslint/prefer-function-type": "error",
