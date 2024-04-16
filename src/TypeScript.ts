@@ -50,6 +50,9 @@ export default {
 
     "@typescript-eslint/consistent-indexed-object-style": "error",
 
+    "@typescript-eslint/consistent-return": ["error", { treatUndefinedAsUnspecified: true }],
+    "consistent-return": "off",
+
     "@typescript-eslint/consistent-type-assertions": "error",
 
     "@typescript-eslint/consistent-type-definitions": ["error", "type"],
@@ -300,6 +303,8 @@ export default {
     "@typescript-eslint/object-curly-spacing": ["error", "always"],
     "object-curly-spacing": "off",
 
+    "@typescript-eslint/only-throw-error": "error",
+
     "@typescript-eslint/padding-line-between-statements": [
         "error",
         {
@@ -426,4 +431,6 @@ export default {
 
     // eslint-disable-next-line id-length
     "@typescript-eslint/unified-signatures": ["error", { ignoreDifferentlyNamedParameters: true }],
+
+    "@typescript-eslint/use-unknown-in-catch-callback-variable": "error",
 } satisfies Rules;

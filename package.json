@@ -15,20 +15,20 @@
     "author": "oathompsonjones",
     "license": "MIT",
     "dependencies": {
-        "@eslint-types/typescript-eslint": "^6.21.0",
-        "@next/eslint-plugin-next": "^14.1.0",
+        "@eslint-types/typescript-eslint": "^7.5.0",
+        "@next/eslint-plugin-next": "^14.2.1",
         "@oathompsonjones/ts-config": "^0.0.31",
-        "@types/eslint": "^8.56.2",
-        "@types/node": "^20.11.19",
-        "@typescript-eslint/eslint-plugin": "^7.0.1",
-        "@typescript-eslint/parser": "^7.0.1",
-        "eslint": "^8.56.0",
-        "eslint-config-next": "^14.1.0",
+        "@types/eslint": "^8.56.9",
+        "@types/node": "^20.12.7",
+        "@typescript-eslint/eslint-plugin": "^7.7.0",
+        "@typescript-eslint/parser": "^7.7.0",
+        "eslint": "^9.0.0",
+        "eslint-config-next": "^14.2.1",
         "eslint-define-config": "^2.1.0",
-        "eslint-plugin-react": "^7.33.2",
+        "eslint-plugin-react": "^7.34.1",
         "eslint-plugin-tsdoc": "^0.2.17",
-        "globals": "^14.0.0",
-        "typescript": "^5.3.3"
+        "globals": "^15.0.0",
+        "typescript": "^5.4.5"
     },
     "pnpm": {
         "patchedDependencies": {

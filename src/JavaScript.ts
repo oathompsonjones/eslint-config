@@ -300,7 +300,7 @@ export default {
     radix: "error",
     "require-atomic-updates": "error",
     "require-await": "error",
-    "require-jsdoc": [
+    /* "require-jsdoc": [
         "error", {
             require: {
                 ArrowFunctionExpression: false,
@@ -310,7 +310,7 @@ export default {
                 MethodDefinition: true,
             },
         },
-    ],
+    ], */
     "require-unicode-regexp": "error",
     "require-yield": "error",
     "rest-spread-spacing": "error",
@@ -333,7 +333,7 @@ export default {
     "template-tag-spacing": "error",
     "unicode-bom": "error",
     "use-isnan": "error",
-    "valid-jsdoc": [
+    /* "valid-jsdoc": [
         "error", {
             prefer: {
                 arg: "param",
@@ -354,11 +354,11 @@ export default {
             requireReturnDescription: true,
             requireReturnType: false,
         },
-    ],
+    ], */
     "valid-typeof": "error",
     "vars-on-top": "error",
     "wrap-iife": ["error", "inside"],
     "wrap-regex": "error",
     "yield-star-spacing": "error",
     yoda: "error",
-} satisfies EslintRules;
+} satisfies Omit<EslintRules, "require-jsdoc" | "valid-jsdoc">;
