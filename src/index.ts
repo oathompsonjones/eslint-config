@@ -20,10 +20,11 @@ const tsdoc = tsdocPlugin as unknown as ESLint.Plugin;
 
 /**
  * Takes the path to your tsconfig.json file and returns a config for ESLint.
- * @param tsConfigJSON - The path to your tsconfig.json file.
+ * @param tsConfigJSON - The path to your tsconfig.json file if using TypeScript.
+ * @param pagesDirectory - The path to your pages directory if using NextJS.
  * @returns Your ESLint config.
 */
-export default function createConfig(tsConfigJSON?: string): FlatESLintConfig[] {
+export default function createConfig(tsConfigJSON?: string, pagesDirectory?: string): FlatESLintConfig[] {
     // Folders to ignore.
     const ignores = ["build", "dist", "bin", "node_modules", ".next"].map((folder) => `**/${folder}/**`);
 
@@ -126,16 +127,33 @@ export default function createConfig(tsConfigJSON?: string): FlatESLintConfig[] 
                 ...tsdocRules,
                 ...reactRules,
                 ...nextRules,
+                // ...(pagesDirectory === undefined ? {} : { "@next/next/no-html-link-for-pages": ["error", pagesDirectory] }),
             },
             settings: reactSettings,
         },
     ];
 
-    return tsConfigJSON === undefined
-        ? defaultConfig
-        : [
+    let finalConfig: FlatESLintConfig[] = defaultConfig;
+
+    if (tsConfigJSON !== undefined) {
+        finalConfig = [
             ...defaultConfig,
             // Provide ESLint with the path to your tsconfig.json file.
             { languageOptions: { parserOptions: { project: tsConfigJSON } } },
         ];
+    }
+
+    if (pagesDirectory !== undefined) {
+        finalConfig = [
+            ...finalConfig,
+            // Provide ESLint with the path to your pages directory.
+            {
+                files: ["**/*.tsx", "**/*.jsx"],
+                plugins: { "@next/next": next },
+                rules: { "@next/next/no-html-link-for-pages": ["error", pagesDirectory] },
+            },
+        ];
+    }
+
+    return finalConfig;
 }

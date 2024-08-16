@@ -12,9 +12,7 @@ export default function Error(): ReactElement {
     return (
         <>
             <h2>{title}</h2>
-            <body>
-                These aren't the droids you're looking for. Click <a href="/">here</a> to go to the homepage.
-            </body>
+            <body>These aren't the droids you're looking for.</body>
         </>
     );
 }
