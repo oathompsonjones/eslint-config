@@ -32,7 +32,7 @@ export default {
     "jsdoc/implements-on-classes": "error",
     "jsdoc/imports-as-dependencies": "error",
     "jsdoc/informative-docs": "error",
-    "jsdoc/lines-before-block": "error",
+    "jsdoc/lines-before-block": "off",
     "jsdoc/match-description": "off",
     "jsdoc/match-name": "off",
     "jsdoc/multiline-blocks": "error",
