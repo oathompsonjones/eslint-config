@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import type { RuleConfig } from "eslint-define-config";
 
-export default {
+export default (pagesDirectory: string): Record<string, RuleConfig> => ({
     "@next/next/google-font-display": "error",
     "@next/next/google-font-preconnect": "error",
     "@next/next/inline-script-id": "error",
@@ -14,7 +14,7 @@ export default {
     "@next/next/no-duplicate-head": "error",
     "@next/next/no-head-element": "error",
     "@next/next/no-head-import-in-document": "error",
-    "@next/next/no-html-link-for-pages": "error",
+    "@next/next/no-html-link-for-pages": ["error", pagesDirectory],
     "@next/next/no-img-element": "error",
     "@next/next/no-page-custom-font": "error",
     "@next/next/no-script-component-in-head": "error",
@@ -23,4 +23,4 @@ export default {
     "@next/next/no-title-in-document-head": "error",
     "@next/next/no-typos": "error",
     "@next/next/no-unwanted-polyfillio": "error",
-} satisfies Record<string, RuleConfig>;
+});

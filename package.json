@@ -1,6 +1,6 @@
 {
     "name": "@oathompsonjones/eslint-config",
-    "version": "1.3.1",
+    "version": "1.4.0",
     "description": "Provides my ESLint configuration.",
     "repository": {
         "url": "https://github.com/oathompsonjones/eslint-config.git"
@@ -34,8 +34,8 @@
     "devDependencies": {
         "@eslint-types/typescript-eslint": "^7.5.0",
         "@types/eslint": "^9.6.0",
-        "@types/node": "^22.3.0",
-        "@types/react": "^18.3.3",
+        "@types/node": "^22.4.2",
+        "@types/react": "^18.3.4",
         "react": "^18.3.1",
         "typescript": "^5.5.4"
     }

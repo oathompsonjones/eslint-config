@@ -20,59 +20,89 @@ const tsdoc = tsdocPlugin as unknown as ESLint.Plugin;
 
 /**
  * Takes the path to your tsconfig.json file and returns a config for ESLint.
- * @param tsConfigJSON - The path to your tsconfig.json file if using TypeScript.
- * @param pagesDirectory - The path to your pages directory if using NextJS.
+ * @param rules - Extra rules to add to your ESLint config.
+ * @param useTypeScript - Whether or not to use TypeScript. Defaults to `true`.
+ * @param tsConfig - The path to your tsconfig.json file if using TypeScript. Defaults
+ * to `"tsconfig.json"` in the root of your project.
+ * @param useNextJS - Whether or not to use NextJS. Defaults to `false`.
+ * @param pagesDirectory - The path to your pages directory if using NextJS. Defaults to `"src/app"`.
  * @returns Your ESLint config.
 */
-export default function createConfig(tsConfigJSON?: string, pagesDirectory?: string): FlatESLintConfig[] {
+export default function createConfig(options: {
+    rules?: FlatESLintConfig[];
+} & ({
+    useNextJS: true;
+    pagesDirectory?: string;
+} | {
+    useNextJS?: false;
+}) & ({
+    useTypeScript: false;
+} | {
+    useTypeScript?: true;
+    tsConfig?: string;
+}) = {}): FlatESLintConfig[] {
+    // Set default values.
+    options.useTypeScript ??= true;
+    options.useNextJS ??= false;
+
     // Folders to ignore.
     const ignores = ["build", "dist", "bin", "node_modules", ".next"].map((folder) => `**/${folder}/**`);
 
     // Used for React/NextJS.
     const parseJSX = { ecmaFeatures: { jsx: true } };
     const reactSettings = {
-        next: { rootDir: "/src/app/" },
+        ...options.useNextJS ? { next: { rootDir: "/src/app/" } } : {},
         react: { version: "detect" },
     };
 
     // Globals for each file type.
-    const nodeGlobals = {
-        ...globals.node,
-        ...globals.es2021,
-    };
-    const reactGlobals = {
-        ...nodeGlobals,
-        ...globals.browser,
-    };
-    const tsGlobals = {
-        ...nodeGlobals,
-        NodeJS: true,
-    };
-    const reactTsGlobals = {
-        ...reactGlobals,
-        NodeJS: true,
-    };
+    const nodeGlobals = { ...globals.node, ...globals.es2021 };
+    const reactGlobals = { ...nodeGlobals, ...globals.browser };
+    const tsGlobals = { ...nodeGlobals, NodeJS: true };
+    const reactTsGlobals = { ...reactGlobals, NodeJS: true };
 
     // Linter options.
     const linterOptions = { reportUnusedDisableDirectives: true };
 
-    const defaultConfig = [
-        { ignores },
-        // Config for .js files.
-        {
-            files: ["**/*.js"],
-            ignores,
-            languageOptions: { globals: nodeGlobals },
-            linterOptions,
-            rules: jsRules,
+    // Config for .js files.
+    const jsConfig = {
+        files: ["**/*.js"],
+        ignores,
+        languageOptions: { globals: nodeGlobals },
+        linterOptions,
+        rules: jsRules,
+    };
+
+    // Config for .jsx files.
+    const jsxConfig = {
+        files: ["**/*.jsx"],
+        ignores,
+        languageOptions: {
+            globals: reactGlobals,
+            parserOptions: parseJSX,
         },
-        // Config for .ts files.
-        {
+        linterOptions,
+        plugins: {
+            ...options.useNextJS ? { "@next/next": next } : {},
+            react,
+        },
+        rules: {
+            ...jsRules,
+            ...reactRules,
+            ...options.useNextJS ? nextRules(options.pagesDirectory ?? "src/app") : {},
+        },
+        settings: reactSettings,
+    };
+
+    // Config for .ts files.
+    const tsConfig = options.useTypeScript
+        ? {
             files: ["**/*.ts"],
             ignores,
             languageOptions: {
                 globals: tsGlobals,
                 parser: tsParser,
+                parserOptions: { project: options.tsConfig ?? "tsconfig.json" },
             },
             linterOptions,
             plugins: {
@@ -84,39 +114,22 @@ export default function createConfig(tsConfigJSON?: string, pagesDirectory?: str
                 ...tsRules,
                 ...tsdocRules,
             },
-        },
-        // Config for .jsx files.
-        {
-            files: ["**/*.jsx"],
-            ignores,
-            languageOptions: {
-                globals: reactGlobals,
-                parserOptions: parseJSX,
-            },
-            linterOptions,
-            plugins: {
-                "@next/next": next,
-                react,
-            },
-            rules: {
-                ...jsRules,
-                ...reactRules,
-                ...nextRules,
-            },
-            settings: reactSettings,
-        },
-        // Config for .tsx files.
-        {
+        }
+        : {};
+
+    // Config for .tsx files.
+    const tsxConfig = options.useTypeScript
+        ? {
             files: ["**/*.tsx"],
             ignores,
             languageOptions: {
                 globals: reactTsGlobals,
                 parser: tsParser,
-                parserOptions: parseJSX,
+                parserOptions: { ...parseJSX, project: options.tsConfig ?? "tsconfig.json" },
             },
             linterOptions,
             plugins: {
-                "@next/next": next,
+                ...options.useNextJS ? { "@next/next": next } : {},
                 "@typescript-eslint": ts,
                 react,
                 tsdoc,
@@ -126,34 +139,19 @@ export default function createConfig(tsConfigJSON?: string, pagesDirectory?: str
                 ...tsRules,
                 ...tsdocRules,
                 ...reactRules,
-                ...nextRules,
-                // ...(pagesDirectory === undefined ? {} : { "@next/next/no-html-link-for-pages": ["error", pagesDirectory] }),
+                ...options.useNextJS ? nextRules(options.pagesDirectory ?? "src/app") : {},
             },
             settings: reactSettings,
-        },
+        }
+        : {};
+
+    // Default config for ESLint.
+    return [
+        { ignores },
+        jsConfig,
+        tsConfig,
+        jsxConfig,
+        tsxConfig,
+        ...options.rules ?? [],
     ];
-
-    let finalConfig: FlatESLintConfig[] = defaultConfig;
-
-    if (tsConfigJSON !== undefined) {
-        finalConfig = [
-            ...defaultConfig,
-            // Provide ESLint with the path to your tsconfig.json file.
-            { languageOptions: { parserOptions: { project: tsConfigJSON } } },
-        ];
-    }
-
-    if (pagesDirectory !== undefined) {
-        finalConfig = [
-            ...finalConfig,
-            // Provide ESLint with the path to your pages directory.
-            {
-                files: ["**/*.tsx", "**/*.jsx"],
-                plugins: { "@next/next": next },
-                rules: { "@next/next/no-html-link-for-pages": ["error", pagesDirectory] },
-            },
-        ];
-    }
-
-    return finalConfig;
 }
