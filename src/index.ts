@@ -3,6 +3,8 @@ import type { ESLint } from "eslint";
 import type { FlatESLintConfig } from "eslint-define-config";
 import globals from "globals";
 import jsRules from "./JavaScript.js";
+import jsdocPlugin from "eslint-plugin-jsdoc";
+import jsdocRules from "./JSDoc.js";
 import nextPlugin from "@next/eslint-plugin-next";
 import nextRules from "./Next.js";
 import reactPlugin from "eslint-plugin-react";
@@ -10,26 +12,14 @@ import reactRules from "./React.js";
 import tsParser from "@typescript-eslint/parser";
 import tsPlugin from "@typescript-eslint/eslint-plugin";
 import tsRules from "./TypeScript.js";
-import tsdocPlugin from "eslint-plugin-tsdoc";
-import tsdocRules from "./TSDoc.js";
 
 const ts = tsPlugin as unknown as ESLint.Plugin;
 const react = reactPlugin as unknown as ESLint.Plugin;
 const next = nextPlugin as unknown as ESLint.Plugin;
-const tsdoc = tsdocPlugin as unknown as ESLint.Plugin;
+const jsdoc = jsdocPlugin as unknown as ESLint.Plugin;
 
-/**
- * Takes the path to your tsconfig.json file and returns a config for ESLint.
- * @param rules - Extra rules to add to your ESLint config.
- * @param useTypeScript - Whether or not to use TypeScript. Defaults to `true`.
- * @param tsConfig - The path to your tsconfig.json file if using TypeScript. Defaults
- * to `"tsconfig.json"` in the root of your project.
- * @param useNextJS - Whether or not to use NextJS. Defaults to `false`.
- * @param pagesDirectory - The path to your pages directory if using NextJS. Defaults to `"src/app"`.
- * @returns Your ESLint config.
-*/
-export default function createConfig(options: {
-    rules?: FlatESLintConfig[];
+type CreateConfigOptions = {
+    configs?: FlatESLintConfig[];
 } & ({
     useNextJS: true;
     pagesDirectory?: string;
@@ -40,13 +30,26 @@ export default function createConfig(options: {
 } | {
     useTypeScript?: true;
     tsConfig?: string;
-}) = {}): FlatESLintConfig[] {
+});
+
+/**
+ * Takes the path to your tsconfig.json file and returns a config for ESLint.
+ * @param options - The options for your ESLint config.
+ * @param options.configs - Extra rules to add to your ESLint config.
+ * @param options.useTypeScript - Whether or not to use TypeScript. Defaults to `true`.
+ * @param options.tsConfig - The path to your tsconfig.json file if using TypeScript. Defaults
+ * to `"tsconfig.json"` in the root of your project.
+ * @param options.useNextJS - Whether or not to use NextJS. Defaults to `false`.
+ * @param options.pagesDirectory - The path to your pages directory if using NextJS. Defaults to `"src/app"`.
+ * @returns Your ESLint config.
+ */
+export default function createConfig(options: CreateConfigOptions = {}): FlatESLintConfig[] {
     // Set default values.
     options.useTypeScript ??= true;
     options.useNextJS ??= false;
 
     // Folders to ignore.
-    const ignores = ["build", "dist", "bin", "node_modules", ".next"].map((folder) => `**/${folder}/**`);
+    const ignores = ["build", "dist", "bin", "node_modules", ".next", "next-env.d.ts"].map((folder) => `**/${folder}/**`);
 
     // Used for React/NextJS.
     const parseJSX = { ecmaFeatures: { jsx: true } };
@@ -70,7 +73,11 @@ export default function createConfig(options: {
         ignores,
         languageOptions: { globals: nodeGlobals },
         linterOptions,
-        rules: jsRules,
+        plugins: { jsdoc },
+        rules: {
+            ...jsRules,
+            ...jsdocRules,
+        },
     };
 
     // Config for .jsx files.
@@ -84,10 +91,12 @@ export default function createConfig(options: {
         linterOptions,
         plugins: {
             ...options.useNextJS ? { "@next/next": next } : {},
+            jsdoc,
             react,
         },
         rules: {
             ...jsRules,
+            ...jsdocRules,
             ...reactRules,
             ...options.useNextJS ? nextRules(options.pagesDirectory ?? "src/app") : {},
         },
@@ -107,12 +116,12 @@ export default function createConfig(options: {
             linterOptions,
             plugins: {
                 "@typescript-eslint": ts,
-                tsdoc,
+                jsdoc,
             },
             rules: {
                 ...jsRules,
+                ...jsdocRules,
                 ...tsRules,
-                ...tsdocRules,
             },
         }
         : {};
@@ -131,13 +140,13 @@ export default function createConfig(options: {
             plugins: {
                 ...options.useNextJS ? { "@next/next": next } : {},
                 "@typescript-eslint": ts,
+                jsdoc,
                 react,
-                tsdoc,
             },
             rules: {
                 ...jsRules,
+                ...jsdocRules,
                 ...tsRules,
-                ...tsdocRules,
                 ...reactRules,
                 ...options.useNextJS ? nextRules(options.pagesDirectory ?? "src/app") : {},
             },
@@ -152,6 +161,6 @@ export default function createConfig(options: {
         tsConfig,
         jsxConfig,
         tsxConfig,
-        ...options.rules ?? [],
+        ...options.configs ?? [],
     ];
 }

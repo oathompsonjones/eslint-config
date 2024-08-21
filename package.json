@@ -1,6 +1,6 @@
 {
     "name": "@oathompsonjones/eslint-config",
-    "version": "1.4.0",
+    "version": "1.5.0",
     "description": "Provides my ESLint configuration.",
     "repository": {
         "url": "https://github.com/oathompsonjones/eslint-config.git"
@@ -15,13 +15,14 @@
     "author": "oathompsonjones",
     "license": "MIT",
     "dependencies": {
+        "@eslint-types/jsdoc": "^48.2.2",
         "@next/eslint-plugin-next": "^14.2.5",
         "@oathompsonjones/ts-config": "^0.0.35",
         "eslint": "^8.57.0",
         "eslint-define-config": "^2.1.0",
+        "eslint-plugin-jsdoc": "^50.2.2",
         "eslint-plugin-next": "^0.0.0",
         "eslint-plugin-react": "^7.35.0",
-        "eslint-plugin-tsdoc": "^0.3.0",
         "globals": "^15.9.0",
         "typescript-eslint": "^7.17.0"
     },
@@ -34,7 +35,7 @@
     "devDependencies": {
         "@eslint-types/typescript-eslint": "^7.5.0",
         "@types/eslint": "^9.6.0",
-        "@types/node": "^22.4.2",
+        "@types/node": "^22.5.0",
         "@types/react": "^18.3.4",
         "react": "^18.3.1",
         "typescript": "^5.5.4"
