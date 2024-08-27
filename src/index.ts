@@ -69,7 +69,7 @@ export default function createConfig(options: CreateConfigOptions = {}): FlatESL
 
     // Config for .js files.
     const jsConfig = {
-        files: ["**/*.js"],
+        files: ["**/*.js", "**/*.mjs", "**/*.cjs"],
         ignores,
         languageOptions: { globals: nodeGlobals },
         linterOptions,
@@ -106,7 +106,7 @@ export default function createConfig(options: CreateConfigOptions = {}): FlatESL
     // Config for .ts files.
     const tsConfig = options.useTypeScript
         ? {
-            files: ["**/*.ts"],
+            files: ["**/*.ts", "**/*.mts", "**/*.cts"],
             ignores,
             languageOptions: {
                 globals: tsGlobals,
