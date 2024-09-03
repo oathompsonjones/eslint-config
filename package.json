@@ -1,6 +1,6 @@
 {
     "name": "@oathompsonjones/eslint-config",
-    "version": "1.5.2",
+    "version": "1.5.3",
     "description": "Provides my ESLint configuration.",
     "repository": {
         "url": "https://github.com/oathompsonjones/eslint-config.git"
