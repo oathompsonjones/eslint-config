@@ -49,7 +49,14 @@ export default function createConfig(options: CreateConfigOptions = {}): FlatESL
     options.useNextJS ??= false;
 
     // Folders to ignore.
-    const ignores = ["build", "dist", "bin", "node_modules", ".next", "next-env.d.ts"].map((folder) => `**/${folder}/**`);
+    const ignores = [
+        "build",
+        "dist",
+        "bin",
+        "node_modules",
+        ".next",
+        "next-env.d.ts",
+    ].map((folder) => `**/${folder}/**`);
 
     // Used for React/NextJS.
     const parseJSX = { ecmaFeatures: { jsx: true } };

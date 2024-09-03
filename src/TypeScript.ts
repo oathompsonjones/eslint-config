@@ -3,7 +3,8 @@ import type { EslintRules, RuleConfig } from "eslint-define-config";
 import type { RuleOptions as TypeScriptRules } from "@eslint-types/typescript-eslint/types";
 
 type TypeScriptRuleReplacements = {
-    [K in keyof TypeScriptRules as K extends `@typescript-eslint/${infer T}` ? T : never]: RuleConfig<TypeScriptRules[K]>;
+    [K in keyof TypeScriptRules as K extends `@typescript-eslint/${infer T}`
+        ? T : never]: RuleConfig<TypeScriptRules[K]>;
 };
 
 type Rules =
@@ -411,7 +412,13 @@ export default {
     "@typescript-eslint/space-before-blocks": "error",
     "space-before-blocks": "off",
 
-    "@typescript-eslint/space-before-function-paren": ["error", { anonymous: "always", asyncArrow: "always", named: "never" }],
+    "@typescript-eslint/space-before-function-paren": [
+        "error", {
+            anonymous: "always",
+            asyncArrow: "always",
+            named: "never",
+        },
+    ],
     "space-before-function-paren": "off",
 
     "@typescript-eslint/space-infix-ops": "error",

@@ -65,7 +65,7 @@ export default {
     "logical-assignment-operators": "error",
     "max-classes-per-file": "error",
     "max-depth": ["error", { max: 5 }],
-    "max-len": ["error", { code: 135 }],
+    "max-len": ["error", { code: 120 }],
     "max-lines": ["error", { max: 750, skipBlankLines: true, skipComments: true }],
     "max-lines-per-function": ["error", { max: 150, skipBlankLines: true, skipComments: true }],
     "max-nested-callbacks": ["error", { max: 5 }],

@@ -5,7 +5,12 @@ export default {
     "react/boolean-prop-naming": "off",
     "react/display-name": "off",
     "react/forbid-component-props": "off",
-    "react/function-component-definition": ["error", { namedComponents: "function-declaration", unnamedComponents: "arrow-function" }],
+    "react/function-component-definition": [
+        "error", {
+            namedComponents: "function-declaration",
+            unnamedComponents: "arrow-function",
+        },
+    ],
     "react/jsx-child-element-spacing": "off",
     "react/jsx-filename-extension": ["error", { extensions: [".jsx", ".tsx"] }],
     "react/jsx-first-prop-new-line": ["error", "multiline-multiprop"],
