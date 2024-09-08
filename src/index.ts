@@ -84,6 +84,7 @@ export default function createConfig(options: CreateConfigOptions = {}): FlatESL
         rules: {
             ...jsRules,
             ...jsdocRules,
+            "jsdoc/no-types": "off" as const,
         },
     };
 
@@ -104,6 +105,7 @@ export default function createConfig(options: CreateConfigOptions = {}): FlatESL
         rules: {
             ...jsRules,
             ...jsdocRules,
+            "jsdoc/no-types": "off" as const,
             ...reactRules,
             ...options.useNextJS ? nextRules(options.pagesDirectory ?? "src/app") : {},
         },
