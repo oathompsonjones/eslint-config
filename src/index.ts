@@ -78,7 +78,7 @@ export default function createConfig(options: CreateConfigOptions = {}): FlatESL
     const jsConfig = {
         files: ["**/*.js", "**/*.mjs", "**/*.cjs"],
         ignores,
-        languageOptions: { globals: nodeGlobals },
+        languageOptions: { globals: options.useNextJS ? reactGlobals : nodeGlobals },
         linterOptions,
         plugins: { jsdoc },
         rules: {
@@ -118,7 +118,7 @@ export default function createConfig(options: CreateConfigOptions = {}): FlatESL
             files: ["**/*.ts", "**/*.mts", "**/*.cts"],
             ignores,
             languageOptions: {
-                globals: tsGlobals,
+                globals: options.useNextJS ? reactTsGlobals : tsGlobals,
                 parser: tsParser,
                 parserOptions: { project: options.tsConfig ?? "tsconfig.json" },
             },
