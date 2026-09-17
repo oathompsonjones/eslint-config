@@ -159,7 +159,7 @@ export default {
         "error",
         "all",
         {
-            ignoredNodes: ["ArrowFunctionExpression > ConditionalExpression.body"],
+            ignoredNodes: ["ArrowFunctionExpression[body.type=ConditionalExpression]"],
             ignoreJSX: "all",
             returnAssign: false,
         },
