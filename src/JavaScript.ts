@@ -300,17 +300,6 @@ export default {
     radix: "error",
     "require-atomic-updates": "error",
     "require-await": "error",
-    /* "require-jsdoc": [
-        "error", {
-            require: {
-                ArrowFunctionExpression: false,
-                ClassDeclaration: true,
-                FunctionDeclaration: true,
-                FunctionExpression: false,
-                MethodDefinition: true,
-            },
-        },
-    ], */
     "require-unicode-regexp": "error",
     "require-yield": "error",
     "rest-spread-spacing": "error",
@@ -333,28 +322,6 @@ export default {
     "template-tag-spacing": "error",
     "unicode-bom": "error",
     "use-isnan": "error",
-    /* "valid-jsdoc": [
-        "error", {
-            prefer: {
-                arg: "param",
-                argument: "param",
-                constructor: "class",
-                return: "returns",
-                virtual: "abstract",
-            },
-            preferType: {
-                Boolean: "boolean",
-                Number: "number",
-                Object: "object",
-                String: "string",
-            },
-            requireParamDescription: true,
-            requireParamType: false,
-            requireReturn: false,
-            requireReturnDescription: true,
-            requireReturnType: false,
-        },
-    ], */
     "valid-typeof": "error",
     "vars-on-top": "error",
     "wrap-iife": ["error", "inside"],

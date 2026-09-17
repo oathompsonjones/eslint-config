@@ -9,14 +9,18 @@ import nextPlugin from "@next/eslint-plugin-next";
 import nextRules from "./Next.js";
 import reactPlugin from "eslint-plugin-react";
 import reactRules from "./React.js";
+import stylisticPlugin from "@stylistic/eslint-plugin";
 import tsParser from "@typescript-eslint/parser";
 import tsPlugin from "@typescript-eslint/eslint-plugin";
 import tsRules from "./TypeScript.js";
+
+// TODO: Update rule lists for all plugins.
 
 const ts = tsPlugin as unknown as ESLint.Plugin;
 const react = reactPlugin as unknown as ESLint.Plugin;
 const next = nextPlugin as unknown as ESLint.Plugin;
 const jsdoc = jsdocPlugin as unknown as ESLint.Plugin;
+const stylistic = stylisticPlugin as unknown as ESLint.Plugin;
 
 type CreateConfigOptions = {
     configs?: FlatESLintConfig[];
@@ -62,7 +66,9 @@ export default function createConfig(options: CreateConfigOptions = {}): FlatESL
     const parseJSX = { ecmaFeatures: { jsx: true } };
     const reactSettings = {
         ...options.useNextJS ? { next: { rootDir: "/src/app/" } } : {},
-        react: { version: "detect" },
+        // "detect" is not used here because eslint-plugin-react's version detection relies on
+        // `context.getFilename()`, which ESLint 10 removed, causing a crash.
+        react: { version: "19" },
     };
 
     // Globals for each file type.
@@ -124,6 +130,7 @@ export default function createConfig(options: CreateConfigOptions = {}): FlatESL
             },
             linterOptions,
             plugins: {
+                "@stylistic": stylistic,
                 "@typescript-eslint": ts,
                 jsdoc,
             },
@@ -148,6 +155,7 @@ export default function createConfig(options: CreateConfigOptions = {}): FlatESL
             linterOptions,
             plugins: {
                 ...options.useNextJS ? { "@next/next": next } : {},
+                "@stylistic": stylistic,
                 "@typescript-eslint": ts,
                 jsdoc,
                 react,

@@ -1,19 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention, sort-keys */
-import type { EslintRules, RuleConfig } from "eslint-define-config";
-import type { RuleOptions as TypeScriptRules } from "@eslint-types/typescript-eslint/types";
-
-type TypeScriptRuleReplacements = {
-    [K in keyof TypeScriptRules as K extends `@typescript-eslint/${infer T}`
-        ? T : never]: RuleConfig<TypeScriptRules[K]>;
-};
-
-type Rules =
-    // JS rules to switch off without TypeScript alternatives
-    & { [_ in "camelcase" | "no-duplicate-imports"]: "off"; }
-    // JS rules to switch off with TypeScript alternatives
-    & { [K1 in keyof TypeScriptRuleReplacements as K1 extends keyof EslintRules ? K1 : never]: "off"; }
-    // TypeScript rules
-    & { [K2 in keyof TypeScriptRules]: RuleConfig<TypeScriptRules[K2]>; };
+import type { RuleConfig } from "eslint-define-config";
 
 export default {
     "no-duplicate-imports": "off",
@@ -28,12 +14,16 @@ export default {
 
     "@typescript-eslint/ban-tslint-comment": "error",
 
-    "@typescript-eslint/ban-types": "error",
+    "@typescript-eslint/no-empty-object-type": "error",
 
-    "@typescript-eslint/block-spacing": "error",
+    "@typescript-eslint/no-unsafe-function-type": "error",
+
+    "@typescript-eslint/no-wrapper-object-types": "error",
+
+    "@stylistic/block-spacing": "error",
     "block-spacing": "off",
 
-    "@typescript-eslint/brace-style": "error",
+    "@stylistic/brace-style": "error",
     "brace-style": "off",
 
     "@typescript-eslint/class-literal-property-style": "error",
@@ -41,10 +31,10 @@ export default {
     "@typescript-eslint/class-methods-use-this": "error",
     "class-methods-use-this": "off",
 
-    "@typescript-eslint/comma-dangle": ["error", "always-multiline"],
+    "@stylistic/comma-dangle": ["error", "always-multiline"],
     "comma-dangle": "off",
 
-    "@typescript-eslint/comma-spacing": "error",
+    "@stylistic/comma-spacing": "error",
     "comma-spacing": "off",
 
     "@typescript-eslint/consistent-generic-constructors": "error",
@@ -74,31 +64,31 @@ export default {
 
     "@typescript-eslint/explicit-module-boundary-types": "error",
 
-    "@typescript-eslint/func-call-spacing": "error",
+    "@stylistic/function-call-spacing": "error",
     "func-call-spacing": "off",
 
-    "@typescript-eslint/indent": ["error", 4, { SwitchCase: 1 }],
+    "@stylistic/indent": ["error", 4, { SwitchCase: 1 }],
     indent: "off",
 
     "@typescript-eslint/init-declarations": "off",
     "init-declarations": "off",
 
-    "@typescript-eslint/key-spacing": "error",
+    "@stylistic/key-spacing": "error",
     "key-spacing": "off",
 
-    "@typescript-eslint/keyword-spacing": "error",
+    "@stylistic/keyword-spacing": "error",
     "keyword-spacing": "off",
 
-    "@typescript-eslint/lines-around-comment": "off",
+    "@stylistic/lines-around-comment": "off",
     "lines-around-comment": "off",
 
-    "@typescript-eslint/lines-between-class-members": "error",
+    "@stylistic/lines-between-class-members": "error",
     "lines-between-class-members": "off",
 
     "@typescript-eslint/max-params": ["error", { max: 5 }],
     "max-params": "off",
 
-    "@typescript-eslint/member-delimiter-style": [
+    "@stylistic/member-delimiter-style": [
         "error", {
             multiline: {
                 delimiter: "semi",
@@ -165,18 +155,18 @@ export default {
 
     "@typescript-eslint/no-extra-non-null-assertion": "error",
 
-    "@typescript-eslint/no-extra-parens": [
+    "@stylistic/no-extra-parens": [
         "error",
         "all",
         {
-            enforceForArrowConditionals: false,
+            ignoredNodes: ["ArrowFunctionExpression > ConditionalExpression.body"],
             ignoreJSX: "all",
             returnAssign: false,
         },
     ],
     "no-extra-parens": "off",
 
-    "@typescript-eslint/no-extra-semi": "error",
+    "@stylistic/no-extra-semi": "error",
     "no-extra-semi": "off",
 
     "@typescript-eslint/no-extraneous-class": "error",
@@ -237,7 +227,6 @@ export default {
 
     "@typescript-eslint/no-this-alias": "off",
 
-    "@typescript-eslint/no-throw-literal": "error",
     "no-throw-literal": "off",
 
     "@typescript-eslint/no-type-alias": "off",
@@ -295,18 +284,18 @@ export default {
 
     "@typescript-eslint/no-useless-empty-export": "error",
 
-    "@typescript-eslint/no-useless-template-literals": "error",
+    "@typescript-eslint/no-unnecessary-template-expression": "error",
 
     "@typescript-eslint/no-var-requires": "error",
 
     "@typescript-eslint/non-nullable-type-assertion-style": "error",
 
-    "@typescript-eslint/object-curly-spacing": ["error", "always"],
+    "@stylistic/object-curly-spacing": ["error", "always"],
     "object-curly-spacing": "off",
 
     "@typescript-eslint/only-throw-error": "error",
 
-    "@typescript-eslint/padding-line-between-statements": [
+    "@stylistic/padding-line-between-statements": [
         "error",
         {
             blankLine: "always",
@@ -390,7 +379,7 @@ export default {
 
     "@typescript-eslint/promise-function-async": "error",
 
-    "@typescript-eslint/quotes": "error",
+    "@stylistic/quotes": "error",
     quotes: "off",
 
     "@typescript-eslint/require-array-sort-compare": "error",
@@ -404,15 +393,15 @@ export default {
 
     "@typescript-eslint/return-await": "error",
 
-    "@typescript-eslint/semi": "error",
+    "@stylistic/semi": "error",
     semi: "off",
 
     "@typescript-eslint/sort-type-constituents": "error",
 
-    "@typescript-eslint/space-before-blocks": "error",
+    "@stylistic/space-before-blocks": "error",
     "space-before-blocks": "off",
 
-    "@typescript-eslint/space-before-function-paren": [
+    "@stylistic/space-before-function-paren": [
         "error", {
             anonymous: "always",
             asyncArrow: "always",
@@ -421,7 +410,7 @@ export default {
     ],
     "space-before-function-paren": "off",
 
-    "@typescript-eslint/space-infix-ops": "error",
+    "@stylistic/space-infix-ops": "error",
     "space-infix-ops": "off",
 
     "@typescript-eslint/strict-boolean-expressions": "error",
@@ -430,7 +419,7 @@ export default {
 
     "@typescript-eslint/triple-slash-reference": "error",
 
-    "@typescript-eslint/type-annotation-spacing": "error",
+    "@stylistic/type-annotation-spacing": "error",
 
     "@typescript-eslint/typedef": "error",
 
@@ -440,4 +429,4 @@ export default {
     "@typescript-eslint/unified-signatures": ["error", { ignoreDifferentlyNamedParameters: true }],
 
     "@typescript-eslint/use-unknown-in-catch-callback-variable": "error",
-} satisfies Rules;
+} satisfies Record<string, RuleConfig>;

@@ -1,8 +1,8 @@
 import type { ReactElement } from "react";
 
 type ErrorProps = {
-    code: number;
-    message: string;
+    readonly code: number;
+    readonly message: string;
 };
 
 /**
@@ -11,14 +11,15 @@ type ErrorProps = {
  * @returns An error page.
  */
 export default function Error(props: ErrorProps): ReactElement {
-    const title = `Error ${props.code} - ${props.message}`;
+    const { code, message } = props;
+    const title = `Error ${code} - ${message}`;
 
     document.title = title;
 
     return (
         <>
             <h2>{title}</h2>
-            <p>{props.message}</p>
+            <p>{message}</p>
         </>
     );
 }

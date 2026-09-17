@@ -1,18 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import type { RuleOptions as JSDocRules } from "@eslint-types/jsdoc/types";
 import type { RuleConfig } from "eslint-define-config";
-
-type MissingRules =
-    | "jsdoc/check-template-names"
-    | "jsdoc/convert-to-jsdoc-comments"
-    | "jsdoc/lines-before-block"
-    | "jsdoc/require-template";
-
-type Rules =
-    // Rules missing from @eslint-types/jsdoc/types
-    & { [_ in MissingRules]: RuleConfig; }
-    // JSDoc rules
-    & { [Key in keyof JSDocRules]: RuleConfig<JSDocRules[Key]>; };
 
 export default {
     "jsdoc/check-access": "error",
@@ -72,4 +59,4 @@ export default {
     "jsdoc/tag-lines": "error",
     "jsdoc/text-escaping": "off",
     "jsdoc/valid-types": "error",
-} satisfies Rules;
+} satisfies Record<string, RuleConfig>;
