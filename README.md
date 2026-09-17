@@ -2,6 +2,8 @@
 
 This package provides an ESLint configuration for various JavaScript and TypeScript projects, including React/NextJS projects.
 
+The package pins the TypeScript version used by ESLint's TypeScript parser, so the TypeScript version installed by the consuming project does not affect ESLint.
+
 ### How to use a configuration
 - Step 1: Install this package
     Run `npm install @oathompsonjones/eslint-config` to add this package to your project. You do **not** need to install eslint separately.
