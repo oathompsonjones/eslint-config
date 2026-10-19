@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import type { ESLint } from "eslint";
 import type { FlatESLintConfig } from "eslint-define-config";
+import { fixupPluginRules } from "@eslint/compat";
 import globals from "globals";
 import jsRules from "./JavaScript.js";
 import jsdocPlugin from "eslint-plugin-jsdoc";
@@ -17,7 +18,8 @@ import tsRules from "./TypeScript.js";
 // TODO: Update rule lists for all plugins.
 
 const ts = tsPlugin as unknown as ESLint.Plugin;
-const react = reactPlugin as unknown as ESLint.Plugin;
+// eslint-plugin-react does not yet support ESLint 10, so its rules are patched with the removed context APIs.
+const react = fixupPluginRules(reactPlugin as unknown as ESLint.Plugin);
 const next = nextPlugin as unknown as ESLint.Plugin;
 const jsdoc = jsdocPlugin as unknown as ESLint.Plugin;
 const stylistic = stylisticPlugin as unknown as ESLint.Plugin;
